@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Getting Started">
+		<param name="Local" value="gxGettingStarted.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="genX Overview">
+			<param name="Local" value="gxgenXOverview.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Pricing and Licensing">
+			<param name="Local" value="gxLicensing.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Understanding Genetic Algorithms">
+		<param name="Local" value="gxUnderstandingGeneticAlgorithms.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Overview of Genetic Algorithms">
+			<param name="Local" value="gxOverviewOfGeneticAlgorithms.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Representing Problems">
+			<param name="Local" value="gxRepresentation.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Selecting Individuals for Reproduction">
+			<param name="Local" value="gxSelection.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Combining Genes to Create New Individuals">
+			<param name="Local" value="gxRecombination.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction New Genes with Mutation">
+			<param name="Local" value="gxMutation.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Walkthrough: Using the genX Component">
+		<param name="Local" value="gxWalkthrough.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Adding the genX Component">
+			<param name="Local" value="gxAddingComponent.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Setting Properties at Design Time">
+			<param name="Local" value="gxSettingProperties.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Writing an Objective Function">
+			<param name="Local" value="gxWritingAnObjectiveFunction.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Reference">
+		<param name="Local" value="gxReference.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Resources">
+			<param name="Local" value="gxResources.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Supported Genetic Operators">
+			<param name="Local" value="gxSupportedGeneticOperators.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Class Library Reference">
+			<param name="Local" value="gxClassLibraryReference.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Samples">
+		<param name="Local" value="gxExamples.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Simple Binary Example">
+			<param name="Local" value="gxSimpleBinaryExample.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Integer Maximization Example">
+			<param name="Local" value="gxIntegerMaximizationExample.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Linear Diophantine Function Example">
+			<param name="Local" value="gxLinearDiophantineExample.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Single Knapsack Example">
+			<param name="Local" value="gxSingleKnapsackExample.htm">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>

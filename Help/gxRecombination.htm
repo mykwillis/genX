@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+    <HEAD>
+        <TITLE>Combining Genes to Create New Individuals</TITLE>
+        <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+        <META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+        <xml>
+            <MSHelp:Keyword Index="K" Term="recombination" />
+            <MSHelp:Keyword Index="K" Term="crossover" />
+        </xml>
+        <link rel="stylesheet" href="dtue.css" type="text/css">
+    </HEAD>
+    <body topmargin="0" id="bodyID" class="dtBODY"> <!--NONSCROLLING BANNER START-->
+        <div id="nsbanner">
+            <div id="bannerrow1">
+                <TABLE CLASS="bannerparthead" CELLSPACING="0" ID="Table1">
+                    <TR ID="hdr">
+                        <TD CLASS="runninghead" nowrap>genX Developer's Guide</TD>
+                        <TD CLASS="product" nowrap>&nbsp;</TD>
+                    </TR>
+                </TABLE>
+            </div>
+            <div id="TitleRow">
+                <H1 class="dtH1"></A>Combining Genes to Create New Individuals</H1>
+            </div>
+        </div>
+        <!--NONSCROLLING BANNER END-->
+        <DIV id="nstext" valign="bottom">
+            <P>
+                Recombination&nbsp;is&nbsp;the method by which genetic information from two or 
+                more parent individuals is combined into a single set of genes in their 
+                offspring.&nbsp; Recombination is central to the traditional interpretation of 
+                genetic algorithms, as it is the process by which good 'chunks' of genes from 
+                different individuals&nbsp;are brought together to form a child.
+            </P>
+            <H4 class="dtH4">Recombination Methods</H4>
+            <P>
+                There are a very large number of recombination operators that have been 
+                described in the world of acadamia, many of them inspired by natural processes, 
+                and many that have little biological inspiration.&nbsp; Arguably&nbsp;the 
+                simplest method is single-point crossover, in which a new individual is created 
+                by first copying each gene in the first parent until it reaches a randomly 
+                selected crossover point, and then copying the remaining genes from the second 
+                parent.</P>
+            <P>Many&nbsp;varieties of crossover-type recombination operators exist, 
+                including&nbsp;some that select multiple crossover points, some that restrict 
+                the location of potential crossover points, and so on.</P>
+            <P>Genetic algorithms have long been used to tackle problems in which the 
+                individuals represent a potential solution to an ordering problem, such as a 
+                description of cities to visit in the Traveling Salesman Problem (TSP).&nbsp; 
+                The encoding choices that have been used for ordering problems of this nature 
+                are problematic for crossover recombination, because it turns out that 
+                offspring of individuals encoding ordering problems&nbsp;often do not represent 
+                viable solutions.</P>
+            <P>To deal with these difficulties, researchers developed special recombination 
+                methods that are sure to always produce viable offspring.&nbsp; The most 
+                popular is probably Partially Matched Crossover (PMX),&nbsp;which essentially 
+                attempts to preserve large chunks of genes in each parent.</P>
+            <H4 class="dtH4">Selecting a Recombination Method with genX</H4>
+            <P>genX supports the most popular recombination methods, including single-point 
+                crossover, PMX, and others.&nbsp; You can choose the recombination method to 
+                use by setting the <STRONG>RecombinationMethod</STRONG> property of the&nbsp;GA 
+                component.</P>
+            <DIV class="footer">
+                <HR>
+            </DIV>
+            <p>Copyright © 2002 <A href="http://www.wanderlust-software.com">Wanderlust Software</A>.&nbsp; 
+                All Rights Reserved.
+            </p>
+        </DIV>
+    </body>
+</HTML>

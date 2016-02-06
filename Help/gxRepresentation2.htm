@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+    <HEAD>
+        <TITLE>Chromosome Representation</TITLE>
+        <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+        <META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+        <xml>
+            <MSHelp:Keyword Index="K" Term="representation, chromosome" />
+            <MSHelp:Keyword Index="K" Term="chromosome representation" />
+        </xml><LINK href="dtue.css" type="text/css" rel="stylesheet"></HEAD>
+    <body class="dtBODY" id="bodyID" topMargin="0"> <!--NONSCROLLING BANNER START-->
+        <div id="nsbanner">
+            <div id="bannerrow1">
+                <TABLE class="bannerparthead" id="Table1" cellSpacing="0">
+                    <TR id="hdr">
+                        <TD class="runninghead" noWrap>genX Developer's Guide</TD>
+                        <TD class="product" noWrap>&nbsp;</TD>
+                    </TR>
+                </TABLE>
+            </div>
+            <div id="TitleRow">
+                <H1 class="dtH1"></A>Chromosome Representation</H1>
+            </div>
+        </div>
+        <!--NONSCROLLING BANNER END-->
+        <DIV id="nstext" valign="bottom">
+            <P>&nbsp;</P>
+            <H4 class="dtH4">Strict Binary Coding</H4>
+            <P>When it comes down to it, any problem encoded with integers, reals, or other 
+                higher-level data types can be described&nbsp;completely in terms of a long 
+                string of bits.&nbsp; It is at this bit level that most of the 
+                original&nbsp;theoretical work on genetic algorithms was done, and there are 
+                many researchers that believe it is at this most basic level that the genetic 
+                operators of mutation and recombination should operate.</P>
+            <P>When we define the&nbsp;genetic operators to deal exclusively 
+                with&nbsp;chromosomes that are context-free bitstrings, they stay forever 
+                ignorant of the higher-level constructs encoded by various substrings, and 
+                therefore can not take any problem- or type-specific information into account 
+                during operation.&nbsp; This can be a blessing and a curse.</P>
+            <P>The blessing comes about because we have a system that is truly generic, and 
+                requires absolutely no modification to work with non-binary representations: 
+                there are no non-binary representations!&nbsp; The curse has a few faces.&nbsp; 
+                Probably the most immediate problem presented by the strict binary 
+                representation is that the programmer needs to convert the problem variables 
+                into a binary representation and back again, which can be an unwieldy operation 
+                for even moderately complex problems.</P>
+            <H4 class="dtH4">Strings of Integers or Reals</H4>
+            <P>For many problems, it is natural to represent potential solutions as strings of 
+                numbers, either integers or reals.&nbsp; Optimizing a real function of 15 
+                parameters, for example, is naturally represented by a chromosome with 15 
+                real-valued genes.&nbsp; A knapsack-like problem (selecting items from a set to 
+                maximize value while keeping cost under some threshold) can be represented with 
+                a string&nbsp;of integers.</P>
+            <P>Treating genes as integers or reals as opposed to bits, as in the strict binary 
+                coding, results in having genetic operators&nbsp;work at a higher level.&nbsp; 
+                Mutation will affect the number as a whole, not just one bit of it, and 
+                recombination will never occur in the middle of a number.</P>
+            <P>Although preparing a new problem for use with a genetic algorithm is relatively 
+                simple, getting good results out of the algorithm is not always so 
+                straightforward.&nbsp; Performance of the traditional genetic algorithm on 
+                arbitrary problems is extremely sensitive to the encoding used, so much so that 
+                one encoding choice might quickly converge to a good maxima, while another may 
+                stagnate forever in mediocrity.</P>
+            <P>Specifying and Enforcing&nbsp;Allele Constraints</P>
+            <P>Every gene has a set of permitted alleles, which is a subset of the set of 
+                possible alleles.&nbsp; The permitted alleles can be specified either by 
+                enumeration or by constraint.</P>
+            <P>&nbsp;</P>
+            <P>Enforcing Permitted Alleles</P>
+            <P>We have a few choices:</P>
+            <P>-&nbsp;treat individuals containing invalid alleles as nonviable, and therefore 
+                unable to reproduce to the next generation;</P>
+            <P>- "correct" invalid alleles to their nearest permitted value;</P>
+            <P>- scale the permitted allele values such that all possible values can be mapped 
+                to a permitted value;</P>
+            <P>- don't allow invalid alleles to be produced in the first place.</P>
+            <P>&nbsp;</P>
+            <P>Treating chromosomes that contain invalid alleles as nonviable is a simple 
+                solution that has some basis in biology.&nbsp; If invalid alleles are generated 
+                infrequently, it is probably an acceptable way to deal with the problem.&nbsp; 
+                In sparse encodings, however, where a large number of possible allele values 
+                are not permitted, we would mutation and crossover to very frequently produce 
+                nonviable individuals that do nothing toward solving the problem.&nbsp; 
+                Therefore, the method is suggested for use only when dense genetic coding is 
+                employed.</P>
+            <P>&nbsp;</P>
+            <P>We can avoid the problem altogether in one of two ways:</P>
+            <P>- don't allow invalid alleles to be produced;</P>
+            <P>- force a dense coding for all genes;</P>
+            <P>&nbsp;</P>
+            <P>Invalid alleles may be produced by either mutation or recombination.&nbsp; The 
+                genetic algorithm could be coded to check for invalid alleles after each of 
+                these operators, and 'retry' it until no invalid alleles are generated.&nbsp; 
+                Similarly, nonviable chromosomes could simply be detected and thrown out during 
+                the replacement stage of the algorithm.&nbsp; In either case, the effect is 
+                that each nonviable individual costs us just the computation required to 
+                perform the recombination (and possibly mutation).</P>
+            <P>Because in many cases we desire the genetic operators to be ignorant of the 
+                semantics of the higher-level types encoded in the genes, we would like to 
+                avoid having to have knowledge about what consititutes an invalid allele.&nbsp; 
+                We can accomplish this if we require that all possible allele values map to 
+                permitted values.</P>
+            <P>If a gene has&nbsp;A<SUB>p</SUB> permitted alleles, and 2<SUP>n</SUP> = A<SUB>p</SUB>
+                for some integer n, the gene is said to have a dense coding, and nothing needs 
+                to be done to ensure all allele values are permitted.&nbsp; If Ap isn't a power 
+                of 2, though, we have to somehow map the 'unused' values to permitted values.</P>
+            <P>&nbsp;</P>
+            <P>&nbsp;&nbsp;For a non-dense coding, define Awith any other having 2n-m permitted 
+                alleles, we can make its encoding fully-dense simply by assigning a mapping 
+                function f{m -&gt; m}</P>
+            <P>&nbsp;</P>
+            <P>Can Gene Labels be Encoded in the Chromosome Itself?</P>
+            <P>We could reserve some bit sequences to represent gene labels in the 
+                chromosome.&nbsp; Or maybe this isn't necessary; maybe we fix the label 
+                position in the chromosome?</P>
+            <P>This would work by manipulating the coding such that all 'normal' alleles 
+                started with 0, leaving sequences that start with 1 to be interpreted as 
+                labels.&nbsp; We could make the labels large enough such that they are unlikely 
+                to be duplicated as a substring of any gene in the chromosome.&nbsp; That would 
+                let us migrate bits all over the place.</P>
+            <P>Let's say we make the chromosome really long, far longer than necessary to 
+                encode all of the genes in the solution.&nbsp; Now say we give each gene a 
+                label that is some sequence of bits.&nbsp; When we decode a chromosome to 
+                assign a value to each gene, we do it by searching the gene for the sequence 
+                that represents the gene.&nbsp; Each time the sequence appears, we pull off the 
+                appropriate number of bits from after it on the chromosome.&nbsp; This can 
+                result in over- and under-specification.&nbsp; In the case of 
+                over-specification, we can arbitrarily decide to take the first, last, or a 
+                random instance of the allele (or an average?).&nbsp; Under specification can't 
+                really be dealt with.</P>
+            <P>Need to do some math.&nbsp; Assume we have&nbsp;eight 8-bit&nbsp;parameters to 
+                encode.&nbsp; We give each one a label 000, 001, 010, etc.&nbsp; How large do 
+                we need to make the chromosome such that we can expect to have at least one of 
+                each label that preceeds at least 8 bits?&nbsp; How long should the label 
+                be?&nbsp; Perhaps by using&nbsp;a longer label we can avoid massive 
+                over-specification.</P>
+            <P>Note that genes may overlap in this scheme.&nbsp; Fine by me.</P>
+            <P>How to do recombination?&nbsp; We could do it blindly, but we might want to 
+                restrict crossover points to gene boundaries?&nbsp; Nah.</P>
+            <P>&nbsp;</P>
+            <P>&nbsp;</P>
+            <P>Encoding Problems with Parameterizable Solutions</P>
+            <P>In&nbsp;many cases, problems attacked by genetic algorithms represent an attempt 
+                to maximize (or minimize) the value of a function of several independent 
+                variables.&nbsp; When this is the case,&nbsp;it is typical to define a single 
+                gene for each parameter in the candidate solution.&nbsp; The type used for each 
+                gene is dictated by the parameter being represented by that gene, and value 
+                constraints may be applied where desirable or necessary to insure only viable 
+                solutions are tested.</P>
+            <P>An individual&nbsp;represents one candidate solution to the problem at 
+                hand.&nbsp;&nbsp;The individual's chromosome contains an ordered list of 
+                alleles, each of which represents a value for a specific gene.&nbsp; In most 
+                cases, we&nbsp;require that each chromosome have a <EM>full complement</EM> of 
+                genes: exactly one allele must exist in the chromosome for each defined 
+                gene.&nbsp; With this&nbsp;requirement, we can easily translate a chromosome to 
+                a particular candidate solution by giving each of the parameters in the 
+                candidate solution&nbsp;a value determined by the chromosome's allele for that 
+                parameter's gene.</P>
+            <P>It was stated above that the chromosome contains an ordered list of alleles, but 
+                we haven't shown the order to be used for anything.&nbsp; In many simple 
+                genetic algorithms, the gene for which an allele provides a value is determined 
+                implicitly by the alleles position on the chromosome.&nbsp; For example, a 
+                problem with&nbsp;n parameters {x<SUB>1</SUB>, x<SUB>2</SUB>, ..., x<SUB>n</SUB>} 
+                could be&nbsp;encoded such that&nbsp;alleles {a<SUB>1</SUB>, a<SUB>2</SUB>, 
+                ..., a<SUB>n</SUB>}&nbsp;exist on each chromosome,&nbsp;with the value of x<SUB>i</SUB>
+                being determined by a<SUB>1</SUB> for all 1&lt;=i&lt;=n.</P>
+            <P>While this position-dependent encoding provides acceptable results for many 
+                simple problems, it is not ideal for many complex problems with many 
+                parameters.&nbsp; Complex problems are therefore most often encoded using <EM>labelled 
+                    alleles</EM>, a scheme in which each allele specifies&nbsp;explicitly the 
+                gene (parameter) for which it specifies a value.&nbsp; With each allele 
+                specifying its purpose, its position on the chromosome becomes irrelevant from 
+                the point of view of the candidate solution.&nbsp; I.e., two chromosomes with 
+                the same set of alleles but in different orders encode the same candidate 
+                solution.</P>
+            <P>It may not be clear why using labelled alleles instead of position-depedent ones 
+                offers us any advantage.&nbsp; The primary reason is that labelled alleles 
+                allow complementary genes&nbsp;to avoid seperation during recombination by 
+                clustering about one another.&nbsp;&nbsp;We will have more to say about 
+                complementary gene clustering later.&nbsp;</P>
+            <P>&nbsp;</P>
+            <H4 class="dtH4">Encoding Ordering Problems</H4>
+            <P>A large body of research exists in applying genetic algorithms to ordering 
+                problems such as the traveling salesman problem.&nbsp; Approaches to problems 
+                of this type generally seek to&nbsp;use the order of alleles on a chromosome to 
+                encode permutations representing candidate solutions to&nbsp;the ordering 
+                problem.</P>
+            <P>[describe scheme here]</P>
+            <P>While researchers have thrown uncountable research papers at the TSP and related 
+                problems,&nbsp;and it remains a fertile research area to this day, one has to 
+                admit at least a sneaking suspicion that the&nbsp;permutation encoding that is 
+                typically employed for these problems has very little similarity to real-life 
+                genetics, and in fact biological inspiration of any kind seems lacking.&nbsp; 
+                That in itself is certainly no reason to discount the technique (especially 
+                given the respectible results that have been obtained using these techniques), 
+                but it does beg at least two questions:</P>
+            <OL>
+                <LI>
+                Are genetic algorithms well-suited to attacking ordering problems?
+                <LI>
+                    Are researchers using genetic algorithms effectively in attacks on ordering 
+                    problems?
+                </LI>
+            </OL>
+            <P>Essentially, solving ordering problems with genetic algorithms has thus far been 
+                focused on manipulating the reordering operators to yield desirable allele 
+                orderings.&nbsp; This is to be contrasted with parameterized problems, in which 
+                the allele orderings are irrelevant to any individual chromosome's fitness, 
+                only serving to help exploit inter-gene dependencies over many 
+                generations.&nbsp;
+            </P>
+            <P>&nbsp;</P>
+            <P>We should question whether there are in fact methods of solving ordering 
+                problems that do not rely on the ordering of alleles in a chromosome.&nbsp; We 
+                should look to nature for examples.</P>
+            <P>&nbsp;</P>
+            <P>Alleles have three pieces of information associated with them: value, position, 
+                and label.&nbsp; The label specifies the gene for which the allele codes, the 
+                value specifies the gene's value, and the position is implied by the locus of 
+                the allele on the chromosome.</P>
+            <P>The position of an allele is therefore unique on that chromosome; only one 
+                allele can have any given position.&nbsp; Without explicitly restricting the 
+                value and label characteristics, though, genetic operators may produce 
+                chromosomes in which an allele's value and/or label are not unique.</P>
+            <P>Fully-specified chromosomes are those in&nbsp;which the chromosome 
+                length&nbsp;is equal to the number of genes describing the problem, and each 
+                allele in the chromosome has a unique label.&nbsp; In other words, each gene is 
+                represented exactly once in the chromosome.&nbsp; To enfore fully-specified 
+                chromosomes, special recombination operators need to be used.</P>
+            <P>&nbsp;</P>
+            <P>&nbsp;</P>
+            <P>One Approach to the Traveling Salesman Problem</P>
+            <P>&nbsp;</P>
+            <P>A set of l homogeneous genes are defined, where l is the number of cities in the 
+                problem being considered.&nbsp; Each gene encodes a single trip from one city 
+                to another.&nbsp; The possible alleles for each gene consist of all possible 
+                trips between cities, such that an allele might be written as (1,4) or (6,5) to 
+                represent trips from city 1 to city 4, and city 6 to city 5 respectively.</P>
+            <P>Each city must appear exactly twice in any given chromosome: once as&nbsp;the 
+                starting city of a trip, and once as the destination.&nbsp;
+            </P>
+            <P>&nbsp;</P>
+            <P>&nbsp;</P>
+            <P>Encoding Problems in genX</P>
+            <P>Given the discussion above, it is clear that the process of determining how best 
+                to represent a problem in a genetic algorithm is a complex one, perhaps the 
+                most complex&nbsp;of the whole problem solving process.&nbsp; In order to 
+                simplify the application of genetic algorithms to arbitrary problems, genX 
+                supports automatic encoding of chromosomes based on .NET class definitions you 
+                provide.&nbsp; Given any .NET class representing the form of solutions to your 
+                problem, genX will automatically generate&nbsp;the chromosome representation 
+                used in the genetic algorithm.&nbsp; You write a single method that calculates 
+                the fitness of an object of the type you've defined, and you're done.</P>
+            <P>&nbsp;</P>
+            <P>Value-based vs. Position-based Codings</P>
+            <P>&nbsp;</P>
+            <P>The objective function used to evaluate a chromosome has two pieces of 
+                information to consider for each allele: the allele's value, and its position 
+                on the chromosome.&nbsp; In most general purpose problems, its best to label 
+                genes such that they can be translated to a parameter in the 
+                problem&nbsp;domain without respect to its position in the chromosome.&nbsp; 
+                Using labeled genes in this manner allows reordering operators such as 
+                inversion to act on individuals to the effect of allowing complementary genes 
+                to migrate closer to one another so as to avoid seperation during 
+                recombination.</P>
+            <P>While value-based codings are the norm, there is a large class of 
+                problems&nbsp;for which&nbsp;researchers have relied heavily (exclusively in 
+                many cases) on the&nbsp;location of an allele on the chromosome in determining 
+                the fitness of the candidate solution.&nbsp; The most famous of these problems 
+                is the Traveling Salesman problem, in which the ordering of alleles is mapped 
+                to a tour traveled by a fictional salesman as he visits a set of cities.</P>
+            <P>&nbsp;</P>
+            <P>&nbsp;</P>
+            <H4 class="dtH4">Homogeneous vs. Heterogeneous Chromosomes</H4>
+            <P>Chromosomes are composed of strings of genes, each of which can potentially be 
+                of a different type than its neighbors.&nbsp; Chromosomes composed of a single 
+                type of genes are called homogeneous, while those that contain at least two 
+                different types are called heterogeneous.</P>
+            <P>&nbsp;</P>
+            <P>Each chromosome encodes a candidate solution to a particular problem.&nbsp; The 
+                only information the genetic algorithm has as to the problem being solved is 
+                the output of an objective function.&nbsp; Objective is a measure of how well 
+                an individual solution (as expressed by a chromosome) performs
+            </P>
+            <P>The position of a particular gene on a chromosome is called its locus.&nbsp; In 
+                an isomorphic representation, the locus determines the function of a gene in 
+                the phenotype.&nbsp; In non-isomorphic representations (when "labeled genes" 
+                are used), the function of each gene is specified as part of the gene 
+                itself.&nbsp; Isomorphic representations can be simulated with gene labeling if 
+                the gene labels are specified as {0...n} and not subject to mutation or 
+                inversion.
+            </P>
+            <P>Fully-specified genes have exactly one gene for each solution parameter.</P>
+            <DIV class="footer"><br>
+                <HR>
+                <p>Copyright © 2002 <A href="http://www.wanderlust-software.com">Wanderlust Software</A>.&nbsp; All 
+                    Rights Reserved.
+                </p>
+            </DIV>
+        </DIV>
+    </body>
+</HTML>

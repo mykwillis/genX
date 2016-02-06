@@ -1,0 +1,379 @@
+Release Checklist:
+
+1. API Reference
+    a. Complete & up to date?
+2. Documentation
+    - Verify links work.
+    - Verify
+3. Examples
+
+References:
+
+http://www.geatbx.com/docu/algselct.html - good site about MatLab GA library
+
+http://citeseer.nj.nec.com/blickle95comparison.html - "A Comparison of Selection Schemes used in Genetic Algorithms"
+
+
+Takeover time - the number of generations that are needed for a single individual to 
+    take over an entire population if no recombination is used. [Goldberg 1991]
+    
+Fitness distribution - s(f) shows the number of individuals with a given fitness f.
+
+Selection method - O(s) transforms a fitness distribution s(f) into a new fitness
+    distribution s'(f).
+    
+    
+These guys http://www.nd.com/ charge upwards of $500 per copy for their GA library.
+
+
+http://arieldolan.com/ofiles/ga/gaa/gaa.html#DemoProblems
+
+Travelling Salesmen Problem
+Knapsack Problem
+Bin Packing
+Facility Allocation
+Multi-modal functions
+    Ackley's
+        http://www.maths.adelaide.edu.au/Applied/llazausk/alife/ackley.htm
+        function definition 
+            f10(x)=-a·exp(-b·sqrt(1/n·sum(x(i)^2)))-exp(1/n·sum(cos(c·x(i))))+a+exp(1); 
+            a=20; b=0.2; c=2·pi; i=1:n;
+            -32.768<=x(i)<=32.768. 
+        global minimum 
+            f(x)=0; x(i)=0, i=1:n. 
+
+    Rosenbrock's
+    Schwefel's
+    Rastrigin's
+    Griewank's
+Function Optimization
+
+
+Training Neural Networks
+
+
+
+Example code at: http://www.coyotegulch.com/algorithm/index.html
+
+
+Travelling Salesman solutions.
+
+http://www.coyotegulch.com/algorithm/ea0002/genetic.html
+
+Special crossover operators were developed for
+the blind TSP problem (when distances are not known).
+
+Partially-Matched Crossover (PMX) -
+
+1: A BC DE
+2: B DA EC
+
+First, identify a sub-tour (i.e., pick two crossover points).  In the
+diagram above, the subtour contains the 2nd and 3rd genes.
+
+This subtour forms a matching section, in this case { B <-> D, C <-> A }.
+
+The first child is formed by copying the first parent, but replacing
+any instances of alleles that appear in the matching section.  The 2nd
+child is formed similarly from the second parent.
+
+3: C DA BE
+4: D BC EA
+
+
+Order Crossover (OX) - WTF?
+
+Cycle Crossover (CX) - 
+
+This method starts by swapping the first allele of each chromosome.  The value
+of the first allele determines the next allele that will be swapped.  This
+continues until the "swap-mate" of the first allele is encountered again.
+
+Edge Recombination Crossover (ERX)
+Inversion -
+
+Inversion just reverses the order of genes in a chromosome, typically between two
+points.  It doesn't necessarily have any relation to crossover.
+
+Mutation - In an application that requires permutations (like TSP), mutation is
+typically done as a swap.
+
+Some other possible crossover operations:
+
+Order Crossover (OX) 
+Cycle Crossover (CX) 
+Uniform Order Based Crossover (UOBX) 
+Edge Recombination Crossover (ERX) 
+ERX with heuristic (Grefenstette) 
+
+
+
+Elitism - should be implemented.
+
+
+
+http://www.cs.bham.ac.uk/~rmp/slide_book/slide_book.html
+
+   
+Problem 3: if Q(x) falls in range (Qmin...Qmax), and Qmin >> 0 yet Qmax - Qmin ~>> 0,
+then we'll get stagnation right off.  To solve this, use a C of -Qmin such that
+F(x) goes closer to zero.
+
+
+
+We can put function-specifying labels on each gene position in the chromosome,
+so that the same function is used regardless of the position of the gene.  This is
+a way to let cooperating gene groups hang out together throughout the generations.
+"tagged representations."
+
+I'm thinking about this now - I think it ought to be possible to detect a lot of
+the problems that GA's run into programmatically, and either suggest to the human
+ways of fixing it, or just adapting the parameters at runtime.  We should be able
+to easily detect things like stagnation and thrashing, and should be able to take
+a population that's floundering and beat it with a stick to see if good things happen.
+
+I.e., these guys are always saying that evolution happens in big spurts of activity
+(like a comet slamming into the planet or whatever) that force big change.  We can
+simulate that kind of thing when a population is stagnating.  Maybe we get wicked with
+mutation or something.
+
+
+Guidelines to designing operators:
+1. If two parents share a characteristic, it should be passed on to a child.
+
+
+Another set of slides:
+
+http://www-mugc.cc.monash.edu.au/~asadk/paper/inline/gene/gene.html
+
+
+genX
+    Overview of Genetic Algorithms
+        Biological Inspiration        
+        Alogithmic Simplifications
+            Each solution is represented by just a single chromosome.
+                (real organisms have multiple chromosomes)
+            Each chromosome is assumed to contain x fixed-size (and fixed-type) genes.
+                (real organisms have variable-sized genes that are composed of multiple units pyrimines)                
+            Mutation generally changes an entire gene.
+                (real mutation just changes one small bit of a gene)
+            Haploid chromosomes are used.
+                (most real organisms use diploid)
+            Elitism often used.
+                (best individual allowed to go into the next generation w/o modification)
+            Discrete population generation interval
+                (i.e., simple (non-overlapping) rather than steady-state (aka overlapping).
+                (in real populations, organisms are born and die continuously)                
+        Haploid vs. Diploid        
+        Search Space
+        
+        Encoding of Individuals
+            Fixed- or variable-sized strings of genes.
+            
+            Genes are typically atomic units like ints, doubles, but can be more complicated
+                like structures.
+                
+            Position-dependent Genes vs. Position-Independent Genes
+            
+                position-dependent example: one int for each coefficient in solving a polynomial
+                    Simple genes with no label are used; equiv: the label for each gene is implicitly
+                        given by its position in the chromosome.
+                        
+                    This is more common, but might not allow for optimal searching.
+                    
+                position-independent - genes themselves are tagged as having a specific purpose.
+                    This is done by using genes that have both a 'label' and some contents.
+                    
+                    position-independent is really more like nature, because proteins can be created
+                        regardless of where they appear in a chromosome.  Also, position-independent
+                        genes can survive being shifted one way or another in a chromosome, or being
+                        swapped into a different position.                    
+                    
+                    Duplicative vs. non-duplicative genomes - A genome for solving a combinatorial
+                        problem like TSP might not allow more than one gene with a given 'label.'                        
+                        Can't think of a case where 'duplicative' genomes would be applied.  Maybe,
+                        though: if I have 10 genes, and only 5 discreet labels, I could have more
+                        than one possible phenotype for each label.
+                        Diploid chromosomes are a special case of duplicative genomes; they have
+                        two genes for every 'label.'
+                        
+                How is a position-dependent genome any different from a non-duplicative position-
+                    indpendent one?
+                    - Each encodes exactly one gene for every 'label,' but:
+                        A good PD gene in one position is essentially worthless in any other position,
+                        which implies that:
+                            - all recombination must be position-preserving;
+                            - this means
+                        A good PD gene may be good only because of complex interactions with other
+                        genes at various (non-contiguous) different positions on the chromosome.  Thus,
+                        recombination is likely to seperate the 'good' gene from its cohorts, thereby
+                        making it 'bad'.  If genes are permitted to migrate in the chromosome, but still
+                        maintain their 'purpose,' then complimentary gene groups can collect in 
+                        contiguous groups.
+                        
+                        The "linkage problem" is the problem of wanting related loci to be close to
+                        one another.
+                        
+                        "In real genetics the function of a gene is often independent of its position,
+                        though ofent genes in a local area work toghether..." - MM
+                        
+                        "we need to find some way for the functional interpretation of an allele to be the
+                        same no matter where it appears in the string."
+                        
+                        Inversion works on chromosomes with labeled genes.  It takes two points, and changes
+                        the order of the genes between them, while leaving each gene with its own label.
+                        
+                        Here we have the same problems with recombination as described above.  Holland suggests
+                        two ways to do crossover:
+                            - Only let chromosomes with the same permutation of loci recombine.  (limiting)
+                            - Master/Slave - reorder the second chromosome to have the same permutation as the
+                                first before doing the recombination.  It's not stated explicitly, but I guess
+                                you would produce two offspring, one with the master's permuataion, and one with
+                                the slave's.
+                                
+                        Holland was labeling each bit independently, which may be expensive.  If our encoding
+                        scheme uses larger genes, though, we should be able to do just one label for each.  This
+                        isn't so bad.
+                        
+                        Crossover hotspots - we do this implicitly when we only allow crossover at
+                        the gene boundary (as opposed to at the bit boundary).
+                        
+                        Underspecification is when a chromosome doesn't have all its loci specified.
+                        Overspecification is when more than one allele is specified for a single loci.
+                        
+                        "Messy GAs" are interesting.
+                        
+            F(x) = FF[ g1(x1), g2(x2), g3(x3), ... ]
+            
+            >>>>
+            
+            Overlapping Genes are a possibility; an index in the genome starts to the
+            beginning of each gene.  The genes may overlap, allowing for more functions
+            to be encoded in the genome then there are genes.  Problems in genetic operators
+            would have to be worked out, though.
+            
+            Mobility would be important in this scenario, I think, so that the GA could
+            work out which parameters needed their own exclusive encoding, and which 
+            could do alright sharing some bits with their neighbor.
+            
+            <<<<
+         
+                        
+                        
+                        
+        Mutation
+            bitwise, genewise, or encoding-specific.
+            - Bitwise mutation can create individuals that are not viable.  For example,
+                a mutation may cause a non-duplicative genome to code two genes with the same
+                'label,' or it may cause a constrained-value gene to take on a disallowed value.
+            - Still, non-viable individuals can be dealt with by either 1. throwing them out
+                before repopulating, or 2. assigning them a fitness of zero.
+            - Genewise mutation can be done in a way that is acceptable for non-duplicative
+            - Encoding-specific mutations have many subtypes.
+                - Mutation operators for any 
+                
+                    
+                
+        Crossover Operations
+        
+        
+        Encoding/Representation
+        Scaling Scheme
+            - Transformation from raw objective scores to fitness scores.
+              Rank, Linear (Fitness Proportionate), Sigma Truncation, Sharing (similarity)
+        Replacement Scheme
+            - Only used with overlapping populations.
+        Selection Scheme
+            - Determines how to choose indidivuals for mating.  How is this different from
+                the fitness value?
+        
+
+Draft 1:
+Theme: Basic Genetic Algorithm Library
+
+- Integer gene representation*
+- Fixed-length chromosomes*
+- Non-overlapping populations*
+- unlabeled alleles*
+- limited set of genetic operators*
+
+Draft 2:
+Theme: Intermediate Genetic Algorithm Library with Examples
+
+- real-value (double) gene representation*
+- Labeled alleles
+- increased set of genetic operators*
+- multiple examples demonstrating common GA problems.*
+
+Draft 3:
+Theme: Advanced Genetic Algorithm Library
+
+- arbitrary gene representation (object)*
+- fixed or variable length chromosomes
+- overlapping or nonoverlapping populations
+- labeled or unlabeled allels
+- exhaustive set of genetic operators
+
+
+Mutate - changes value of allele
+Reorder - changes position of gene
+    Swap/Invert/etc.
+Repurpose - changes function of gene (by just changing label)
+    (probably no better than mutating - if label0 and label1 have different
+    gene representations, this would fail.)
+Recombine - produces new chromosome from old genes
+
+Label - an identifer attached to a gene that specifies its purpose
+
+
+Number formatting: ms-help://MS.VSCC/MS.MSDNVS/cpguide/html/cpconstandardnumericformatstrings.htm
+
+
+Individual
+    Chromosome
+    Objective       - return value from objective function
+    RawFitness      - non-negative, bigger-is-better value
+    ScaledFitness   - run through the scalar
+    
+   
+Getting Help to Work
+
+1. Install orca.exe for editing merge modules.
+2. Namespace.exe will show namespaces, topics, and everything.
+
+
+ms-help://MS.VSCC/ms.vshik/mshlpwrk/html/hxconeditinghelpregistrationmsm.htm
+
+http://www.helpware.net/FAR/help/msh2_primer.htm
+
+ms-help://namespace/fileid/internalpath/topic.htm
+
+
+There are 2 stages to registering a MS Help collection: 
+1) Register the Collection  (.HxS or .HxC) file under a unique Namespace.
+2) Register one or more  help (.HxS) files to the collection. Each help file must be given a unique FileID.
+
+For a single help file collection, the Namespace and FileID are often the same.
+EG. Help file testhelp.HxS may have a URL ms-help://testhelp/testhelp/file.htm
+
+Create a shortcut to the docs, use the following "c:\program files\common files\microsoft shared\help\dexplore.exe" /helpcol ms-help://ms.vshik
+(DExplore.exe is the Visual Studio .NET, MS Help 2 document viewer).
+
+
+netsdk.HxC
+references:
+NETSDK.HxA
+NETSDK.HxT
+
+Parser generates a description of the problem as a Problem class.  
+Problem is submitted to Evolver, which uses GA to attack it.
+
+Parser
+ Evolver
+  GA
+
+
+Competitors/Similar Products
+Evolver by Palisade
+NeuroSolutions
+

@@ -1,0 +1,25 @@
+Here's a scheme to evolve the main parameters along with the individuals themselves.
+
+Build a two-tiered GA, whereby the lower-tier represents the "real" problem to be solved,
+while the upper tier represents the problem of finding the ideal parameters for solving
+the real problem.  Thus, the genes of the upper tier encode the parameters used for
+the bottom-tier GA.  This should be done using tagged representations that allow for
+cooperating gene groups.
+
+The simplistic thing would be to run the meta-GA, with the objective of each chromosome
+being calculated by a "full run" of a GA using the parameters dictated by the upper
+GA.  While it seems that we would eventually find a local max for the parameters, the
+enormous complexity involved would seem prohibitive.  
+
+A big problem with that scheme is that a whole lot of things that were learned in the
+lower-tier are thrown away with each new test.  Even while we continue to evolve the
+parameters used for the lower-tier, we should maintain some gene-line in the lower-tier
+population.  In other words, the lower tiers should be treated as individual sub-populations
+of the same GA, even though they each have independent parameters.
+
+
+Dynamic Parameter Assignment for Genetic Algorithms
+
+1. Use sub-populations 
+1. Detect trends; i.e., the change in fitness/std. dev/etc. in the population compared
+   to known past performance.

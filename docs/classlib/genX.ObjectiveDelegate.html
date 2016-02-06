@@ -1,0 +1,19 @@
+﻿<html dir="LTR"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><title>ObjectiveDelegate Delegate</title><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0"><tr id="hdr"><td class="runninghead">genX Genetic Algorithm Library</td><td class="product"></td></tr></table></div><div id="TitleRow"><h1 class="dtH1">ObjectiveDelegate Delegate</h1></div></div><div id="nstext"><p>
+            Defines the objective function.
+            </p><div class="syntax"><div>public delegate double ObjectiveDelegate(<br>   <a href="genX.Chromosome.html">Chromosome</a> <i>c</i><br>);</div></div><h4 class="dtH4">Remarks</h4><p><P>
+            The objective function is responsible for testing how well a chromosome
+            performs its objective.  In the case of function optimization problems, 
+            the objective typically calculates the function value based on the 
+            chromosome's genes.  In other problems, the objective function may subject
+            the chromosome to a set of random tests to measure its worthiness.
+            </P><P>
+            The objective function is called once for each chromosome in the population.
+            The value it returns is stored in that chromosome's RawObjective property.
+            </P><P>
+            Although the term 'fitness function' is often used to describe the
+            problem-specific function that measures the worth of individuals in the
+            population, it's important to understand that the Fitness property of
+            the Chromosome is not necessarily the same as the RawObjective.  See
+            <a href="genX.ScalingDelegate.html">ScalingDelegate</a> for a description of the process used
+            to set the Fitness property.
+            </P></p><h4 class="dtH4">Requirements</h4><p><b>Namespace: </b><a href="genX.html">genX Namespace</a></p><p><b>Assembly: </b>genX.dll</p><h4 class="dtH4">See Also</h4><p><a href="genX.html">genX Namespace</a></p><hr><div id="footer"><p><a href="http://www.wanderlust-software.com">Copyright (c) 2002-2003 Wanderlust Software, LLC.  All Rights Reserved.</a></p><p>Generated from assembly genX [1.0.1157.32853]</p></div></div></body></html>

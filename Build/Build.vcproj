@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding = "Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.00"
+	Name="Build"
+	ProjectGUID="{B6B9EFE4-367D-472A-88CE-85094ADBB965}"
+	SccProjectName="Perforce Project"
+	SccAuxPath=""
+	SccLocalPath="..\..\.."
+	SccProvider="MSSCCI:Perforce SCM"
+	Keyword="MakeFileProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
+			ConfigurationType="10">
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				Description="Performing Packaging Steps..."
+				CommandLine="copy $(SolutionDir)\genX\bin\$(ConfigurationName)\genX.dll $(SolutionDir)
+cd $(SolutionDir)
+echo | &quot;\Program Files\NDoc\NDocConsole.exe&quot; -verbose -project=genx.ndoc
+&quot;\Program Files\HTML Help Workshop\hhc.exe&quot; .\Help\genX.hhp | more
+"
+				ExcludedFromBuild="FALSE"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="10">
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				Description="Performing Packaging Steps..."
+				CommandLine="copy $(SolutionDir)\genX\bin\$(ConfigurationName)\genX.dll $(SolutionDir)
+cd $(SolutionDir)
+echo | &quot;\Program Files\NDoc\NDocConsole.exe&quot; -verbose -project=genx.ndoc
+&quot;\Program Files\HTML Help Workshop\hhc.exe&quot; .\Help\genX.hhp | more
+"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+		</Configuration>
+	</Configurations>
+	<Files>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

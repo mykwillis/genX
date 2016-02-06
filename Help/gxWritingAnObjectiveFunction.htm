@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+    <HEAD>
+        <TITLE>Writing an Objective Function</TITLE>
+        <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+        <META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+        <xml>
+            <MSHelp:Keyword Index="K" Term="objective function, writing" />
+        </xml>
+        <link rel="stylesheet" href="dtue.css" type="text/css">
+    </HEAD>
+    <body topmargin="0" id="bodyID" class="dtBODY"> <!--NONSCROLLING BANNER START-->
+        <div id="nsbanner">
+            <div id="bannerrow1">
+                <TABLE CLASS="bannerparthead" CELLSPACING="0" ID="Table1">
+                    <TR ID="hdr">
+                        <TD CLASS="runninghead" nowrap>genX Developer's Guide</TD>
+                        <TD CLASS="product" nowrap>&nbsp;</TD>
+                    </TR>
+                </TABLE>
+            </div>
+            <div id="TitleRow">
+                <H1 class="dtH1"></A>Writing an Objective Function</H1>
+            </div>
+        </div>
+        <!--NONSCROLLING BANNER END-->
+        <DIV id="nstext" valign="bottom">
+            <P>Objective functions are responsible for providing a measure of "goodness" for 
+                each candidate solution proposed by the genetic algorithm.&nbsp;&nbsp;The 
+                performance of each&nbsp;individual must be boiled down to a single real value 
+                that gives some indication of how well it solves the problem being optimized.
+            </P>
+            <P>You can supply an objective function for your problem by attaching an event 
+                handler to the CalculateObjective event of the genX GA component.&nbsp; To do 
+                this, first highlight the GA component that you placed on the designer surface 
+                and&nbsp;select <STRONG>View | Properties Window</STRONG> to bring up the 
+                Properties window.&nbsp; In this window, select the Event button (the lightning 
+                bolt) to display the list of events raised by the component.&nbsp; Double click 
+                in the space after the CalculateObjective event, and you should now see a 
+                function body in the main editor window like this:</P>
+            <P class="code">private void ga1_CalculateObjective(object sender, 
+                genX.CalculateObjectiveEventArgs e)
+                <br>
+                {
+                <br>
+                &nbsp; // insert code here, placing objective value in 
+                e.Chromosome.RawObjective
+                <br>
+                }
+            </P>
+            <p>&nbsp;</p>
+            <P>
+                Examining the various <A href="gxExamples.htm">samples</A> that ship with genX 
+                is the quickest way to learn how to write effective objective functions.</P>
+            <P>&nbsp;</P>
+            <DIV class="footer">
+                <HR>
+            </DIV>
+            <p>Copyright © 2002 <A href="http://www.wanderlust-software.com">Wanderlust Software</A>.&nbsp; 
+                All Rights Reserved.
+            </p>
+        </DIV>
+    </body>
+</HTML>

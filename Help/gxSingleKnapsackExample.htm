@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+    <HEAD>
+        <TITLE>Single Knapsack Example</TITLE>
+        <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+        <META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+        <xml>
+            <MSHelp:Keyword Index="K" Term="Example, knapsack" />
+        </xml>
+        <link rel="stylesheet" href="dtue.css" type="text/css">
+    </HEAD>
+    <body topmargin="0" id="bodyID" class="dtBODY"> <!--NONSCROLLING BANNER START-->
+        <div id="nsbanner">
+            <div id="bannerrow1">
+                <TABLE CLASS="bannerparthead" CELLSPACING="0" ID="Table1">
+                    <TR ID="hdr">
+                        <TD CLASS="runninghead" nowrap>genX Developer's Guide</TD>
+                        <TD CLASS="product" nowrap>&nbsp;</TD>
+                    </TR>
+                </TABLE>
+            </div>
+            <div id="TitleRow">
+                <H1 class="dtH1"></A>Single Knapsack Example</H1>
+            </div>
+        </div>
+        <!--NONSCROLLING BANNER END-->
+        <DIV id="nstext" valign="bottom">
+            <P>The "single knapsack" problem presents the following scenario: you have a 
+                knapsack with a fixed capacity C.&nbsp; There exists a collection of items, 
+                each with value v<SUB>i</SUB> and required capacity (think of it as cost) c<SUB>i</SUB>.&nbsp; 
+                The problem is to find the optimal collection of items to put in your knapsack 
+                such that you have the highest total value V, while not exceeding the capacity 
+                of the knapsack.</P>
+            <h4 class="dtH4">Encoding</h4>
+            <P>A&nbsp;fixed number of binary genes are used, with one gene corresponding to 
+                each item.&nbsp; A <STRONG>false</STRONG> value indicates the item should not 
+                be placed in the knapsack, while a <STRONG>true</STRONG> value indicates that 
+                it should.</P>
+            <h4 class="dtH4">Objective Calculation</h4>
+            <P>The objective calculation adds up the costs of each of the selected items, i.e. 
+                those items whose corresponding gene is <STRONG>true</STRONG>.&nbsp; If the 
+                cost exceeds the knapsack capacity C, the objective value is given as a 
+                negative value with magnitude equal to the difference between the totaled cost 
+                and the capacity.</P>
+            <P>If the total cost of all selected items is under C, the objective is a positive 
+                value equal to the sum of the values of the selected items.</P>
+            <DIV CLASS="footer">
+                <br>
+                <HR>
+                <p>Copyright © 2002 <A href="mailto:myk_willis@yahoo.com">Myk Willis</A>.&nbsp; All 
+                    Rights Reserved.
+                </p>
+            </DIV>
+        </DIV>
+    </body>
+</HTML>

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+    <HEAD>
+        <TITLE>Mutation</TITLE>
+        <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+        <META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+        <xml>
+            <MSHelp:Keyword Index="K" Term="mutation" />
+        </xml>
+        <link rel="stylesheet" href="dtue.css" type="text/css">
+    </HEAD>
+    <body topmargin="0" id="bodyID" class="dtBODY"> <!--NONSCROLLING BANNER START-->
+        <div id="nsbanner">
+            <div id="bannerrow1">
+                <TABLE CLASS="bannerparthead" CELLSPACING="0" ID="Table1">
+                    <TR ID="hdr">
+                        <TD CLASS="runninghead" nowrap>genX Developer's Guide</TD>
+                        <TD CLASS="product" nowrap>&nbsp;</TD>
+                    </TR>
+                </TABLE>
+            </div>
+            <div id="TitleRow">
+                <H1 class="dtH1"></A>Mutation</H1>
+            </div>
+        </div>
+        <!--NONSCROLLING BANNER END-->
+        <DIV id="nstext" valign="bottom">
+            <P>Mutation is a process that alters a gene in an individual, typically by 
+                assigning a random allele.&nbsp; Mutation is applied stochastically with a 
+                relatively small probability, on the order of 0.001 mutations per gene 
+                copy.&nbsp;
+            </P>
+            <H4 class="dtH4">The Role of Mutation in Genetic Algorithms</H4>
+            <P>The role of mutation in evolutionary biology and computing is debated even to 
+                this today.&nbsp; While classic texts like Goldberg's see mutation as a way of 
+                insuring genetic diversity:</P>
+            <BLOCKQUOTE dir="ltr" style="MARGIN-RIGHT: 0px">
+                <P>"Mutation is needed because, even though reproduction and crossover effectively 
+                    search and recombine extant notions, occasionally they may become overzealous 
+                    and lose some potentially useful genetic material...the mutation operator 
+                    protects against such an irrecoverable loss." [Goldberg, pg. 14]</P>
+            </BLOCKQUOTE>
+            <P>There are other contexts in which mutation is seen only as a negative.&nbsp; The 
+                "mutational meltdown" is cited as one reason why a small but otherwise stable 
+                population of (natural) organisms&nbsp;may be&nbsp;doomed to extinction under 
+                certain conditions.&nbsp; Genetic algorithms&nbsp;typically don't allow invalid 
+                allele values for offspring - they just throw out the invalid indivual and try 
+                again -&nbsp;and so the danger of extinction is not a factor in the GA.&nbsp;</P>
+            <P>Finally, there are those contexts in which mutation is seen as being an active 
+                and necessary participant in the search for better solutions.&nbsp; Permutation 
+                problems such as the Traveling Salesman Problem, for example, often use custom 
+                mutation operators with large mutation probabilities for the purpose of 
+                reordering the salesman's tour.&nbsp; It may be argued that this is not really 
+                mutation, as it deviates so much from the biological inspiration.</P>
+            <P>It should be pointed out that if mutation is applied to a population by itself 
+                (i.e., without recombination), it results in a random search of the solution 
+                space.&nbsp; Obviously, in different circumstances, the randomness it produces 
+                can be beneficial or detrimental, and there does not appear to be a good 
+                description of what those circumstances are.</P>
+            <h4 class="dtH4">Supported Mutation Operators</h4>
+            <P>The following mutation operators are supported by genX:</P>
+            <DIV class="footer">
+                <UL>
+                    <LI>
+                    Bitwise
+                    <LI>
+                    Random
+                    <LI>
+                        Boundary</LI></UL>
+            </DIV>
+            <P>Bitwise mutation is "bit-flipping," whereby a bit on the chromosome is flipped 
+                from 0 to 1 or vice versa.&nbsp; Bitwise mutation may be used with any 
+                encoding.</P>
+            <P>Random mutation works by replacing one allele in the chromosome with a 
+                randomly-selected one from the set of permitted alleles.</P>
+            <P>Boundary mutation assigns an allele a value which is either the highest or 
+                lowest value allowed according to the constraints.&nbsp; Generally, boundary 
+                mutation is useful only when using real-valued genes that have some 
+                combinatorial behavior during recombination.&nbsp; For example, when 
+                recombination averages the values of each parent's gene when assigning a new 
+                gene value.</P>
+            <P>&nbsp;</P>
+            <P>The mutation operator to use is specified by setting the genX.GA.Mutator 
+                property to an appropriate delegate.</P>
+            <P>&nbsp;</P>
+            <DIV class="footer">
+                <HR>
+            </DIV>
+            <p>Copyright © 2002 <A href="http://www.wanderlust-software.com">Wanderlust Software</A>.&nbsp; All 
+                Rights Reserved.
+            </p>
+        </DIV>
+    </body>
+</HTML>

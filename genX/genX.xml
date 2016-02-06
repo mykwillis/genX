@@ -1,0 +1,1689 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>genX</name>
+    </assembly>
+    <members>
+        <member name="T:genX.Encoding.BinaryGeneDescriptor">
+            <summary>
+            Describes the constraints for a <B>BinaryGene</B>, and produces 
+            <B>BinaryGene</B> objects based on those constraints.
+            </summary>
+            <remarks>
+            Binary genes are by their nature extremely simple, and thus have
+            no constraints.
+            </remarks>    
+        </member>
+        <member name="T:genX.GeneDescriptor">
+            <summary>
+            Describes a Gene.
+            </summary>
+        </member>
+        <member name="M:genX.GeneDescriptor.GetRandomAllele">
+            <summary>
+            Randomizes the gene's value.
+            </summary>
+        </member>
+        <member name="M:genX.GeneDescriptor.Mutate(genX.Gene)">
+            <summary>
+            Mutates a gene.
+            </summary>
+            <param name="g"></param>
+            <returns></returns>
+        </member>
+        <member name="P:genX.GeneDescriptor.Name">
+            <summary>
+            Gets or sets the gene's name.
+            </summary>
+        </member>
+        <member name="P:genX.GeneDescriptor.Description">
+            <summary>
+            Gets or sets a description of this gene.
+            </summary>
+        </member>
+        <member name="P:genX.GeneDescriptor.Mutator">
+            <summary>
+            Gets or sets the default mutator for this gene.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.BinaryGeneDescriptor.GetRandomAllele">
+            <summary>
+            Returns a randomized <B>BinaryGene</B> object.
+            </summary>
+        </member>
+        <member name="F:genX.Encoding.BinaryGeneDescriptor.Default">
+            <summary>
+            Represents the default BinaryGeneDescriptor.
+            </summary>
+        </member>
+        <member name="T:genX.Encoding.BinaryGene">
+            <summary>
+            Represents a gene with binary type.
+            </summary>
+        </member>
+        <member name="T:genX.Gene">
+            <summary>
+            Represents a single gene on a chromosome.
+            </summary>
+        </member>
+        <member name="M:genX.Gene.#ctor(genX.GeneDescriptor)">
+            <summary>
+            Creates a new Gene.
+            </summary>
+        </member>
+        <member name="M:genX.Gene.#ctor(genX.GeneDescriptor,System.Int32)">
+            <summary>
+            Creates a new gene.
+            </summary>
+        </member>
+        <member name="M:genX.Gene.Clone">
+            <summary>
+            Creates a copy of the Gene that copies all values appropriately.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:genX.Gene.Descriptor">
+            <summary>
+            Gets or sets the GeneDescriptor that defines this gene's purpose.
+            </summary>
+        </member>
+        <member name="P:genX.Gene.Label">
+            <summary>
+            Gets or sets this gene's label.
+            </summary>
+        </member>
+        <member name="P:genX.Gene.ObjectValue">
+            <summary>
+            Gets this gene's value as an Object.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.BinaryGene.op_Implicit(genX.Encoding.BinaryGene)~System.Boolean">
+            <summary>
+            Casts a BinaryGene to a bool.
+            </summary>
+            <param name="gene">The gene that is to be cast.</param>
+            <returns>
+            The value of BinaryGene.Value.
+            </returns>
+        </member>
+        <member name="M:genX.Encoding.BinaryGene.#ctor">
+            <summary>
+            Creates an IntegerGene with default constraints and a random value.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.BinaryGene.#ctor(genX.Encoding.BinaryGeneDescriptor)">
+            <summary>
+            Creates an BinaryGene with the specified constraints.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.BinaryGene.#ctor(genX.Encoding.BinaryGeneDescriptor,System.Boolean)">
+            <summary>
+            Creates a BinaryGene with the specified constraints and an initial value.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.BinaryGene.ToString">
+            <summary>
+            Gets a string representation of this gene.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:genX.Encoding.BinaryGene.Value">
+            <summary>
+            Gets or sets this gene's value.
+            </summary>
+        </member>
+        <member name="P:genX.Encoding.BinaryGene.ObjectValue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:genX.Encoding.BinaryGene.Descriptor">
+            <summary>
+            Gets or sets the GeneDescriptor that defines this gene's purpose.
+            </summary>
+        </member>
+        <member name="T:genX.Chromosome">
+            <summary>
+            Represents a single chromosome in the population.
+            </summary>
+        </member>
+        <member name="M:genX.Chromosome.#ctor">
+            <summary>
+            Initializes an empty chromosome with default values.
+            </summary>
+            <remarks>
+            You must set the Genes property of the chromosome before it may
+            be used.
+            </remarks>
+        </member>
+        <member name="M:genX.Chromosome.#ctor(genX.Gene[])">
+            <summary>
+            Initializes a chromosome with a given set of genes.
+            </summary>
+            <param name="genes">
+            An array of Genes with which to initailize.  Each Gene in the array
+            may be of any derived type.
+            </param>
+        </member>
+        <member name="F:genX.Chromosome.CrossoverPoint">
+            <summary>
+            Specifies the crossoverpoint used with single point crossover.
+            </summary>
+        </member>
+        <member name="M:genX.Chromosome.Clone">
+            <summary>
+            Creates a deep copy of the Chromosome.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:genX.Chromosome.ToString">
+            <summary>
+            Returns this <B>Chromosome</B> instance as a string.
+            </summary>
+            <returns>
+            Returns a string that contains each of the Genes in the chromosome
+            seperated by a space.
+            </returns>
+        </member>
+        <member name="P:genX.Chromosome.Genes">
+            <summary>
+            Gets or sets the genes that make up the chromosome.
+            </summary>
+        </member>
+        <member name="P:genX.Chromosome.GenesByLabel">
+            <summary>
+            GenesByLabel
+            </summary>
+        </member>
+        <member name="P:genX.Chromosome.Item(System.Int32)">
+            <summary>
+            Gets the gene at the specified index.
+            </summary>
+        </member>
+        <member name="P:genX.Chromosome.NormalizedObjective">
+            <summary>
+            Gets the normalized objective value for this Chromosome.
+            </summary>
+            <remarks>
+            <P>
+            The <B>NormalizedObjective</B> property represents a normalized representation
+            of how well a chromosome performed in the objective test.  While the
+            <see href="genX.Chromosome.RawObjective" /> property may be negative
+            or represent an error, <B>NormalizedObjective</B> is a "higher is better" non-
+            negative value.
+            </P>
+            <P>
+            Using a normalized objective value allows algorithms built to crafted
+            more cleanly by dealing only with "higher is better" non-negative
+            objectives.
+            </P>
+            <P>
+            In general, a normalized objective value in one generation cannot be 
+            compared directly to one in another generation, because the normalization
+            is done specific to a generation; i.e., a NormalizedObjective of 20 in
+            generation 1 might actually represent a more fit chromosome than one that
+            has a NormalizedObjective of 30 in generation 3.
+            </P>
+            </remarks>
+        </member>
+        <member name="P:genX.Chromosome.RawObjective">
+            <summary>
+            Gets or sets the chromosome's raw objective value.
+            </summary>
+            <remarks>
+            <P>
+            A chromosome's RawObjective is the unmodified value returned from 
+            the objective function.  Depending on the implementation of the 
+            objective function, this value may be positive or negative, and may
+            represent either a measure of fitness or a measure of error for
+            the chromosome.
+            </P>
+            <P>
+            <B>RawObjective</B> is not used in the framework except for reporting
+            purposes.  Instead, <see href="NormalizedObjective"/>
+            is used, which represents a normalized expression of objective.
+            </P>
+            </remarks>
+        </member>
+        <member name="P:genX.Chromosome.Fitness">
+            <summary>
+            Gets or sets the fitness value of this Chromosome.
+            </summary>
+            <remarks>
+            <P>
+            The fitness value is a typically a scaled function of this chromosome's
+            <see cref="P:genX.Chromosome.NormalizedObjective"/> value relative to the other
+            chromosomes in the population.
+            </P>
+            <P>
+            The Fitness value is supplied by the Scaler method, as opposed to the
+            Objective method that furnishes the raw objective score for the chromosome.
+            While Objective methods are typically specific to the problem being solved
+            and representation used, the Fitness is typically calculated independently.
+            </P>
+            <P>
+            Fitness represents the relative likelihood that this chromosome 
+            will reproducing to form offspring in the next generation.  The
+            fitness value may be any non-negative value.
+            </P>
+            </remarks>
+        </member>
+        <member name="P:genX.Chromosome.ID">
+            <summary>
+            Gets or sets a unique identifier for this chromosome.
+            </summary>
+            <remarks>
+            The <B>ID</B> field is unique among all chromosomes, regardless of
+            population.  
+            </remarks>
+        </member>
+        <member name="P:genX.Chromosome.SelectionCount">
+            <summary>
+            Gets or sets the number of times this chromosome was selected as
+            a parent.
+            </summary>
+        </member>
+        <member name="P:genX.Chromosome.Parents">
+            <summary>
+            Provides information about this chromosome's parents and
+            recombination method.
+            </summary>
+        </member>
+        <member name="T:genX.GADesigner">
+            <summary>
+            Summary description for Designer.
+            </summary>
+        </member>
+        <member name="T:genX.Encoding.DoubleGeneDescriptor">
+            <summary>
+            Describes the constraints for a <B>DoubleGene</B>, and produces 
+            <B>DoubleGene</B> objects based on those constraints.
+            </summary>
+            <remarks>
+            The <see cref="P:genX.Encoding.DoubleGeneDescriptor.MinValue"/> and <see cref="P:genX.Encoding.DoubleGeneDescriptor.MaxValue"/> properties
+            specify the range of values that may be taken on by double gene
+            alleles.
+            </remarks>
+        </member>
+        <member name="F:genX.Encoding.DoubleGeneDescriptor.DefaultMinValue">
+            <summary>
+            The default minimum value.
+            </summary>
+        </member>
+        <member name="F:genX.Encoding.DoubleGeneDescriptor.DefaultMaxValue">
+            <summary>
+            The default maximum value.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.DoubleGeneDescriptor.#ctor">
+            <summary>
+            Creates a new IntegerGeneConstraints with the default values.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.DoubleGeneDescriptor.#ctor(System.Double,System.Double)">
+            <summary>
+            Creates a new IntegerGeneConstraints with the given minimum and
+            maximum values.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.DoubleGeneDescriptor.GetRandomAllele">
+            <summary>
+            Returns a random allele based on the constraints.
+            </summary>
+        </member>
+        <member name="F:genX.Encoding.DoubleGeneDescriptor.Default">
+            <summary>
+            Represents the default IntegerGeneConstraints.
+            </summary>
+        </member>
+        <member name="P:genX.Encoding.DoubleGeneDescriptor.MinValue">
+            <summary>
+            Gets or sets the minimum value that may be taken on by a gene.
+            </summary>
+        </member>
+        <member name="P:genX.Encoding.DoubleGeneDescriptor.MaxValue">
+            <summary>
+            Gets or sets the maximum value that may be taken on by a gene.
+            </summary>
+        </member>
+        <member name="T:genX.Encoding.DoubleGene">
+            <summary>
+            Represents a gene with integer type.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.DoubleGene.#ctor">
+            <summary>
+            Creates an IntegerGene with default constraints and a random value.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.DoubleGene.#ctor(genX.Encoding.DoubleGeneDescriptor)">
+            <summary>
+            Creates an IntegerGene with the specified constraints.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.DoubleGene.#ctor(genX.Encoding.DoubleGeneDescriptor,System.Int32)">
+            <summary>
+            Creates an IntegerGene with the specified constraints and an initial value.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.DoubleGene.ToString">
+            <summary>
+            Gets a string representation of this Gene.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:genX.Encoding.DoubleGene.Value">
+            <summary>
+            Gets or sets this gene's value.
+            </summary>
+        </member>
+        <member name="P:genX.Encoding.DoubleGene.ObjectValue">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:genX.Encoding.DoubleGene.Descriptor">
+            <summary>
+            Gets or sets the GeneDescriptor that defines this gene's purpose.
+            </summary>
+        </member>
+        <member name="T:genX.MutatedEventArgs">
+            <summary>
+            Arguments passed to a Mutated event handler.
+            </summary>
+        </member>
+        <member name="P:genX.MutatedEventArgs.Chromosome">
+            <summary>
+            The chromosome that was mutated.
+            </summary>
+        </member>
+        <member name="P:genX.MutatedEventArgs.MutationPoint">
+            <summary>
+            The index of the gene at which the mutation occured.
+            </summary>
+        </member>
+        <member name="P:genX.MutatedEventArgs.OldGene">
+            <summary>
+            The value of the gene before the mutation.
+            </summary>
+        </member>
+        <member name="P:genX.MutatedEventArgs.NewGene">
+            <summary>
+            The value of the gene after the mutation.
+            </summary>
+        </member>
+        <member name="T:genX.NewPopulationEventArgs">
+            <summary>
+            Arguments passed to a NewPopulation event handler.
+            </summary>
+        </member>
+        <member name="P:genX.NewPopulationEventArgs.OldPopulation">
+            <summary>
+            The old population.
+            </summary>
+        </member>
+        <member name="P:genX.NewPopulationEventArgs.NewPopulation">
+            <summary>
+            The new population.
+            </summary>
+        </member>
+        <member name="P:genX.NewPopulationEventArgs.Generation">
+            <summary>
+            The generation most recently evaluated.
+            </summary>
+        </member>
+        <member name="T:genX.CalculateObjectiveEventArgs">
+            <summary>
+            Arguments passed to a CalculateObjective event handler.
+            </summary>
+        </member>
+        <member name="P:genX.CalculateObjectiveEventArgs.Chromosome">
+            <summary>
+            The Chromosome whose objective is to be calculated.
+            </summary>
+        </member>
+        <member name="T:genX.ObjectiveDelegate">
+            <summary>
+            Defines the objective function.
+            </summary>
+            <remarks>
+            <P>
+            The objective function is responsible for testing how well a chromosome
+            performs its objective.  In the case of function optimization problems, 
+            the objective typically calculates the function value based on the 
+            chromosome's genes.  In other problems, the objective function may subject
+            the chromosome to a set of random tests to measure its worthiness.
+            </P>
+            <P>
+            The objective function is called once for each chromosome in the population.
+            The value it returns is stored in that chromosome's RawObjective property.
+            </P>
+            <P>
+            Although the term 'fitness function' is often used to describe the
+            problem-specific function that measures the worth of individuals in the
+            population, it's important to understand that the Fitness property of
+            the Chromosome is not necessarily the same as the RawObjective.  See
+            <see cref="T:genX.ScalingDelegate"/> for a description of the process used
+            to set the Fitness property.
+            </P>
+            </remarks>
+        </member>
+        <member name="T:genX.ScalingDelegate">
+            <summary>
+            Defines the fitness scaling function.
+            </summary>
+            <remarks>
+            <P>
+            Fitness scaling functions are responsible for setting the Fitness
+            property of each chromosome in the population.  Typically this is done
+            as some function of the Chromosome's RawObjective value, though the
+            fitness scaling function is free to assign a value as it sees fit.
+            </P>
+            <P>
+            Fitness values may be any non-negative value, and represent the
+            relative liklihood of a chromosome being selected for reproduction.
+            </P>
+            </remarks>
+            <param name="chromosomes">An array of Chromosomes for which the Fitness
+            property is to be calculated.  The passed-in array is sorted according
+            to ascending Objective values.  The NormalizedObjective property of each Chromosome
+            is normalized and offset from the value returned by the objective function
+            such that it may be assumed to be non-negative.
+            </param>
+        </member>
+        <member name="T:genX.SelectionDelegate">
+            <summary>
+            Defines the selection delegate.
+            </summary>
+            <remarks>
+            The selection function is responsible for selecting chromosomes
+            for reproduction.
+            </remarks>
+        </member>
+        <member name="T:genX.RecombinationDelegate">
+            <summary>
+            RecombinationDelegate.
+            </summary>
+        </member>
+        <member name="T:genX.ValueMutationDelegate">
+            <summary>
+            ValueMutationDelegate
+            </summary>
+        </member>
+        <member name="T:genX.OrderMutationDelegate">
+            <summary>
+            OrderMutationDelegate
+            </summary>
+        </member>
+        <member name="T:genX.MutatedEventHandler">
+            <summary>
+            Handler for the Mutated event.
+            </summary>
+        </member>
+        <member name="T:genX.NewPopulationEventHandler">
+            <summary>
+            Handler for the NewPopulation event.
+            </summary>
+        </member>
+        <member name="T:genX.TerminateEventHandler">
+            <summary>
+            Handler for the Terminate event.
+            </summary>
+        </member>
+        <member name="T:genX.CalculateObjectiveEventHandler">
+            <summary>
+            Handler for the CalculateObjective event.
+            </summary>
+        </member>
+        <member name="T:genX.ObjectiveType">
+            <summary>
+            Specifies whether an objective function should be maximized or minimized.
+            </summary>
+        </member>
+        <member name="F:genX.ObjectiveType.MinimizeObjective">
+            <summary>
+            Specifies that the objective represents a cost function, and should
+            be minimized.
+            </summary>
+        </member>
+        <member name="F:genX.ObjectiveType.MaximizeObjective">
+            <summary>
+            Specifies that the objective represents a profit function, and should
+            be maximized.
+            </summary>
+        </member>
+        <member name="T:genX.Utils">
+            <summary>
+            Provides utility functions required throughout the code.
+            </summary>
+        </member>
+        <member name="F:genX.Utils.Rand">
+            <summary>
+            A common instance of <see cref="T:System.Random"/> to be used for
+            obtaining random values.
+            </summary>
+        </member>
+        <member name="T:genX.GA">
+            <summary>
+            Implements the primary control of the genetic algorithm's execution.
+            </summary>
+        </member>
+        <member name="F:genX.GA.DefaultGeneMutationProbability">
+            <summary>
+            Specifies the default gene mutation probability.
+            </summary>
+        </member>
+        <member name="F:genX.GA.DefaultRecombinationProbability">
+            <summary>
+            Specifies the default recombination probability.
+            </summary>
+        </member>
+        <member name="M:genX.GA.OnMutated(genX.MutatedEventArgs)">
+            <summary>
+            Raises the Mutated event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:genX.GA.OnNewPopulation(genX.NewPopulationEventArgs)">
+            <summary>
+            Raises the NewPopulation event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:genX.GA.OnTerminate(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Raises the Terminate event.
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:genX.GA.OnCalculateObjective(genX.CalculateObjectiveEventArgs)">
+            <summary>
+            Raises the CalculateObjective event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:genX.GA.Step">
+            <summary>
+            Runs the genetic algorithm for a single generation.
+            </summary>
+        </member>
+        <member name="M:genX.GA.Run">
+            <summary>
+            Runs the genetic algorithm to completion.
+            </summary>
+            <remarks>
+            The algorithm will be run continuously until one of the 
+            termination criteria have been met, or until the number of elapsed
+            generations exceeds the value set by <see cref="P:genX.GA.MaxGenerations"/>.
+            </remarks>
+        </member>
+        <member name="M:genX.GA.Run(System.Int32)">
+            <summary>
+            Runs the genetic algorithm for a given number of generations.
+            </summary>
+            <remarks>
+            The algorithm will be run continuously until on of the following
+            three things happen: the specified number of generations pass;
+            the <see cref="P:genX.GA.MaxGenerations"/> has been exceeded, or at least 
+            one termination event handler signals completion.
+            </remarks>
+        </member>
+        <member name="M:genX.GA.#ctor">
+            <summary>
+            Creates a new GA object with default values.
+            </summary>
+        </member>
+        <member name="P:genX.GA.Population">
+            <summary>
+            Gets the current population of chromosomes.
+            </summary>
+        </member>
+        <member name="P:genX.GA.Objective">
+            <summary>
+            Gets or sets the object implementing the objective methods.
+            </summary>
+            <remarks>
+            The objective object determines the RawObjective of each Chromosome
+            each generation.
+            </remarks>
+        </member>
+        <member name="P:genX.GA.Scaler">
+            <summary>
+            Gets or sets the object implementing the Scaler methods.
+            </summary>
+            <remarks>
+            The Scaler object determines the Fitness of each Chromosome
+            each generation, based on the Chromosome's NormalizedObjective.
+            </remarks>
+        </member>
+        <member name="P:genX.GA.Selector">
+            <summary>
+            Gets or sets the object implementing the selector methods.
+            </summary>
+            <remarks>
+            The selector object chooses the Chromosomes that are to participate
+            in populating the next generation.
+            </remarks>
+        </member>
+        <member name="P:genX.GA.Recombinator">
+            <summary>
+            Gets or sets the object implementing the recombinator methods.
+            </summary>
+            <remarks>
+            The recombinator object builds offspring Chromosomes from parents.
+            </remarks>
+        </member>
+        <member name="P:genX.GA.ValueMutator">
+            <summary>
+            Gets or sets the function that is called when a gene is to be
+            mutated.
+            </summary>
+            <remarks>
+            <P>
+            Each gene has a default mutation function specified by its
+            associated GeneDescriptor.  In most cases, this default mutation
+            function is appropriate.
+            </P>
+            <P>
+            ValueMutator functions are generally built to handle mutation of
+            a specific type of gene.  If the gene population is homogeneous
+            (that is, all genes are of the same type), the <B>ValueMutator</B>
+            property can safely be set to a mutator suitable for that type.
+            </P>
+            <P>
+            If, however, the gene population is heterogeneous, you must be sure
+            that the ValueMutator specified can deal appropriately with all gene
+            types in the genome.
+            </P>
+            <P>
+            Set this value to null to use the value mutator specified as the
+            default for a gene.
+            </P>
+            </remarks>
+        </member>
+        <member name="P:genX.GA.ObjectiveType">
+            <summary>
+            Gets or sets a value that specifies whether the algorithm will
+            attempt to maximize or minimize the objective value.
+            </summary>
+            <remarks>
+            If the objective function specified by <see cref="P:genX.GA.Objective"/> is
+            a profit function, <B>ObjectiveType</B> should be set to
+            <B>MaximizeObjective</B>.  If instead the objective function is a
+            measure of cost, specify <B>MinimizeObjective</B> for the objective
+            type.
+            </remarks>        
+        </member>
+        <member name="P:genX.GA.GeneMutationProbability">
+            <summary>
+            Gets or sets the probability of a mutation occuring on a gene.
+            </summary>
+            <remarks>
+            The probability must be in the range [0,1.0].
+            </remarks>        
+        </member>
+        <member name="P:genX.GA.RecombinationProbability">
+            <summary>
+            Gets or sets the probability of recombination occuring.
+            </summary>
+            <remarks>
+            The probability must be in the range [0,1.0].
+            </remarks>        
+        </member>
+        <member name="P:genX.GA.PopulationSize">
+            <summary>
+            Gets or sets the size of the population.
+            </summary>
+        </member>
+        <member name="P:genX.GA.MaxGenerations">
+            <summary>
+            Gets or sets the maximum number of generations that the algorithm
+            will be allowed to run.
+            </summary>
+        </member>
+        <member name="P:genX.GA.HighestObjective">
+            <summary>
+            Gets the highest objective yet to be found.
+            </summary>
+        </member>
+        <member name="P:genX.GA.LowestObjective">
+            <summary>
+            Gets the lowest objective yet to be found.
+            </summary>
+        </member>
+        <member name="P:genX.GA.BestObjective">
+            <summary>
+            Gets the best objective yet to be found.
+            </summary>
+            <remarks>
+            The best objective may be either the HighestObjective or the
+            LowestObjective, depending on whether or not IntertedObjective
+            is true.
+            </remarks>
+        </member>
+        <member name="P:genX.GA.Generation">
+            <summary>
+            Gets the current generation.
+            </summary>
+            <remarks>
+            The first generation is generation 0.
+            </remarks>
+        </member>
+        <member name="E:genX.GA.Mutated">
+            <summary>
+            Event that is raised when a gene is mutated.
+            </summary>
+        </member>
+        <member name="E:genX.GA.NewPopulation">
+            <summary>
+            Event that is raised when a new population is ready to be tested.
+            </summary>
+        </member>
+        <member name="E:genX.GA.Terminate">
+            <summary>
+            Event that is raised when the genetic algorithm is testing for 
+            termination.
+            </summary>
+        </member>
+        <member name="E:genX.GA.CalculateObjective">
+            <summary>
+            Event that is raised when the objective for a chromosome is
+            to be calculated.
+            </summary>
+        </member>
+        <member name="P:genX.GA.ChromosomeLength">
+            <summary>
+            Gets or sets the chromosome length (the number of genes in each
+            chromosome).
+            </summary>
+            <remarks>
+            The chromosome length may only be set with this property if the
+            chromosomes being used are homogenous.  
+            </remarks>
+        </member>
+        <member name="P:genX.GA.GeneDescriptor">
+            <summary>
+            Gets or sets the gene descriptors.
+            </summary>
+        </member>
+        <member name="P:genX.GA.EncodingType">
+            <summary>
+            Specifies the encoding type for the chromosome.
+            </summary>
+        </member>
+        <member name="P:genX.GA.MinIntValue">
+            <summary>
+            Specifies the minimum integer value used when <B>EncodingType</B>
+            is <B>EncodingType.Integer</B>.
+            </summary>
+        </member>
+        <member name="P:genX.GA.MaxIntValue">
+            <summary>
+            Specifies the maximum integer value used when <B>EncodingType</B>
+            is <B>EncodingType.Integer</B>.
+            </summary>
+        </member>
+        <member name="P:genX.GA.MinDoubleValue">
+            <summary>
+            Specifies the minimum double value used when <B>EncodingType</B>
+            is <B>EncodingType.Double</B>.
+            </summary>
+        </member>
+        <member name="P:genX.GA.MaxDoubleValue">
+            <summary>
+            Specifies the maximum double value used when <B>EncodingType</B>
+            is <B>EncodingType.Double</B>.
+            </summary>
+        </member>
+        <member name="P:genX.GA.SelectionMethod">
+            <summary>
+            Specifies the selection method.
+            </summary>        
+        </member>
+        <member name="P:genX.GA.RecombinationOperator">
+            <summary>
+            Specifies the recombination method to use.
+            </summary>        
+        </member>
+        <member name="P:genX.GA.MutationOperator">
+            <summary>
+            Specifies the mutation operator to use.
+            </summary>
+        </member>
+        <member name="P:genX.GA.FitnessScaling">
+            <summary>
+            Specifies a scaling operator.
+            </summary>
+        </member>
+        <member name="P:genX.GA.FitnessMultiple">
+            <summary>
+            Specifies the fitness multiple for linear fitness scaling.
+            </summary>
+        </member>
+        <member name="P:genX.GA.SelectivePressure">
+            <summary>
+            Specifies the selective pressure for linear ranked fitness scaling.
+            </summary>
+        </member>
+        <member name="T:genX.EncodingType">
+            <summary>
+            Specifies the type of the genes used in a chromosome.
+            </summary>
+        </member>
+        <member name="F:genX.EncodingType.Binary">
+            <summary>
+            Specifies that chromosomes are strings of binary digits.
+            </summary>
+        </member>
+        <member name="F:genX.EncodingType.Integer">
+            <summary>
+            Specifies that chromosomes are strings of integers.
+            </summary>
+        </member>
+        <member name="F:genX.EncodingType.Real">
+            <summary>
+            Specifies that chromosomes are strings of real numbers 
+            (System.Double datatype).
+            </summary>
+        </member>
+        <member name="F:genX.EncodingType.Custom">
+            <summary>
+            Specifies that chromosomes are made up of genes of custom 
+            data types.
+            </summary>
+        </member>
+        <member name="T:genX.SelectionMethod">
+            <summary>
+            Specifies a method by which chromosomes are selected for reproduction.
+            </summary>
+        </member>
+        <member name="F:genX.SelectionMethod.Roulette">
+            <summary>
+            Roulette selection, a.k.a. stochastic selection with replacement.
+            </summary>
+        </member>
+        <member name="F:genX.SelectionMethod.StochasticRemainderWithoutReplacement">
+            <summary>
+            Stochastic remainder selection without replacement.
+            </summary>
+        </member>
+        <member name="F:genX.SelectionMethod.Custom">
+            <summary>
+            A custom selection method is used.
+            </summary>
+        </member>
+        <member name="T:genX.MutationOperator">
+            <summary>
+            Specifies an operator to use for gene value mutation.
+            </summary>
+        </member>
+        <member name="F:genX.MutationOperator.Bitwise">
+            <summary>
+            "Bit-flipping" mutation.
+            </summary>
+        </member>
+        <member name="F:genX.MutationOperator.Boundary">
+            <summary>
+            Boundary mutation randomly sets a gene to the low or high
+            boundary.
+            </summary>
+        </member>
+        <member name="F:genX.MutationOperator.GeneSpecific">
+            <summary>
+            Mutation is implemented using mutation operators defined by 
+            the affected gene's associated GeneDescriptor.
+            </summary>
+        </member>
+        <member name="F:genX.MutationOperator.Custom">
+            <summary>
+            A custom mutation method is used.
+            </summary>
+        </member>
+        <member name="T:genX.RecombinationOperator">
+            <summary>
+            Specifies an operator used for recombination.
+            </summary>
+        </member>
+        <member name="F:genX.RecombinationOperator.SinglePointCrossover">
+            <summary>
+            A single point is chosen on the chromosome, and offspring receive genes
+            before that point from one parent and after that gene from the other.
+            </summary>
+        </member>
+        <member name="F:genX.RecombinationOperator.TwoPointCrossover">
+            <summary>
+            Two points are chosen on the chromosome, and offspring receive the genes
+            between those points from one parent and other genes from the other parent.
+            </summary>
+        </member>
+        <member name="F:genX.RecombinationOperator.Uniform">
+            <summary>
+            Offspring are produced by randomly selecting each gene from one parent or
+            the other.
+            </summary>
+        </member>
+        <member name="F:genX.RecombinationOperator.Custom">
+            <summary>
+            A custom recombination method is used.
+            </summary>
+        </member>
+        <member name="T:genX.FitnessScaling">
+            <summary>
+            Specifies a method to use for scaling normalized objectives to fitness values.
+            </summary>
+        </member>
+        <member name="F:genX.FitnessScaling.Proportional">
+            <summary>
+            The fitness value is the normalized objective.
+            </summary>
+        </member>
+        <member name="F:genX.FitnessScaling.Linear">
+            <summary>
+            Fitness value is scaled linearly.
+            </summary>
+        </member>
+        <member name="F:genX.FitnessScaling.LinearRanked">
+            <summary>
+            Fitness value is assigned according to the ranking of each individual
+            in order of normalized objective.
+            </summary>
+        </member>
+        <member name="F:genX.FitnessScaling.Custom">
+            <summary>
+            A custom fitness scaler is used.
+            </summary>
+        </member>
+        <member name="T:genX.TerminationFlags">
+            <summary>
+            Specifies one or more methods to use for termination.
+            </summary>
+            <remarks>
+            Termination based on MaxGenerations is always active.
+            </remarks>
+        </member>
+        <member name="F:genX.TerminationFlags.ObjectiveThreshold">
+            <summary>
+            Termination when the objective of the best individual in a population
+            meets or exceeds a given threshold.
+            </summary>
+        </member>
+        <member name="F:genX.TerminationFlags.Custom">
+            <summary>
+            A custom termination method is used.
+            </summary>
+        </member>
+        <member name="T:genX.Encoding.IntegerGeneDescriptor">
+            <summary>
+            Describes the constraints for an <B>IntegerGene</B>, and produces 
+            <B>IntegerGene</B> objects based on those constraints.
+            </summary>
+            <remarks>
+            The <see cref="P:genX.Encoding.IntegerGeneDescriptor.MinValue"/> and <see cref="P:genX.Encoding.IntegerGeneDescriptor.MaxValue"/> properties
+            specify the range of values that may be taken on by integer gene
+            alleles.
+            </remarks>
+        </member>
+        <member name="F:genX.Encoding.IntegerGeneDescriptor.DefaultMinValue">
+            <summary>
+            The default minimum value.
+            </summary>
+        </member>
+        <member name="F:genX.Encoding.IntegerGeneDescriptor.DefaultMaxValue">
+            <summary>
+            The default maximum value.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.IntegerGeneDescriptor.#ctor">
+            <summary>
+            Creates a new <B>IntegerGeneConstraints</B> with default property 
+            values.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.IntegerGeneDescriptor.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new <B>IntegerGeneConstraints</B> with the given minimum 
+            and maximum values.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.IntegerGeneDescriptor.GetRandomAllele">
+            <summary>
+            Returns a random allele based on the constraints.
+            </summary>
+        </member>
+        <member name="F:genX.Encoding.IntegerGeneDescriptor.Default">
+            <summary>
+            Represents the default IntegerGeneConstraints.
+            </summary>
+        </member>
+        <member name="P:genX.Encoding.IntegerGeneDescriptor.MinValue">
+            <summary>
+            Gets or sets the minimum value that may be taken on by a gene.
+            </summary>
+        </member>
+        <member name="P:genX.Encoding.IntegerGeneDescriptor.MaxValue">
+            <summary>
+            Gets or sets the maximum value that may be taken on by a gene.
+            </summary>
+        </member>
+        <member name="T:genX.Encoding.IntegerGene">
+            <summary>
+            Represents a gene with integer type.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.IntegerGene.#ctor">
+            <summary>
+            Creates an IntegerGene with default constraints and a random value.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.IntegerGene.#ctor(genX.Encoding.IntegerGeneDescriptor)">
+            <summary>
+            Creates an IntegerGene with the specified constraints.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.IntegerGene.#ctor(genX.Encoding.IntegerGeneDescriptor,System.Int32)">
+            <summary>
+            Creates an IntegerGene with the specified constraints and an initial value.
+            </summary>
+        </member>
+        <member name="M:genX.Encoding.IntegerGene.ToString">
+            <summary>
+            Gets a string representation of this gene.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:genX.Encoding.IntegerGene.Value">
+            <summary>
+            Gets or sets this gene's value.
+            </summary>
+        </member>
+        <member name="P:genX.Encoding.IntegerGene.ObjectValue">
+            <summary>
+            Gets the IntegerGene's value as an object.
+            </summary>
+            <remarks>
+            This property exists to allow the object value to be accessible
+            to code written against the Gene object.  Code written against
+            IntegerGene should use the Value property to avoid casts.
+            </remarks>
+        </member>
+        <member name="P:genX.Encoding.IntegerGene.Descriptor">
+            <summary>
+            Gets or sets the GeneDescriptor that defines this gene's purpose.
+            </summary>
+        </member>
+        <member name="T:genX.Mutation.BitwiseMutation">
+            <summary>
+            Implements bitwise mutation.
+            </summary>
+        </member>
+        <member name="M:genX.Mutation.BitwiseMutation.Mutate(genX.Gene)">
+            <summary>
+            Mutates a gene by bitwise mutation.
+            </summary>
+            <param name="gene"></param>
+            <returns></returns>
+        </member>
+        <member name="T:genX.Mutation.BoundaryMutation">
+            <summary>
+            Implements boundary mutation.
+            </summary>
+        </member>
+        <member name="M:genX.Mutation.BoundaryMutation.Mutate(genX.Gene)">
+            <summary>
+            Mutates a gene by applying boundary mutation.
+            </summary>
+            <param name="gene">An IntegerGene or DoubleGene to be mutated.</param>
+            <returns></returns>
+        </member>
+        <member name="T:genX.Persistance">
+            <summary>
+            Provides support for persisting population data to disk.
+            </summary>
+        </member>
+        <member name="P:genX.Persistance.GA">
+            <summary>
+            Gets or sets the associated GA.
+            </summary>
+        </member>
+        <member name="T:genX.PopulationSummary">
+            <summary>
+            Provides summary statistics for a <see cref="T:genX.Population"/>.
+            </summary>
+        </member>
+        <member name="M:genX.PopulationSummary.#ctor(genX.GA,genX.Population)">
+            <summary>
+            Creates a PopulationSummary from a Population.
+            </summary>
+            <param name="ga">The GA.</param>
+            <param name="Population">The Population for which the 
+            PopulationSummary will provide summary information.
+            </param>
+        </member>
+        <member name="M:genX.PopulationSummary.Write2(System.IO.TextWriter)">
+            <summary>
+            Dumps a text representation of the PopulationSummary.
+            </summary>
+            <param name="textWriter">
+            Specifies the TextWriter to where the summary will be
+            written.
+            </param>
+            <example>
+            This example shows sample output from this method:
+            <code>
+                HighestObjective: 95
+                LowestObjective:  92
+                MeanObjective:    94
+                Variance:         1.0
+                StandardDeviation:1.0
+            </code>
+            </example>
+        </member>
+        <member name="M:genX.PopulationSummary.Write(System.IO.TextWriter)">
+            <summary>
+            Writes the population summary to a text writer.
+            </summary>
+            <param name="textWriter"></param>
+        </member>
+        <member name="M:genX.PopulationSummary.ToString">
+            <summary>
+            Puts the contents of the Write method in a string.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:genX.PopulationSummary.HighestObjective">
+            <summary>
+            The highest objective value present in the population.
+            </summary>
+        </member>
+        <member name="P:genX.PopulationSummary.LowestObjective">
+            <summary>
+            The lowest objective value present in the population.
+            </summary>
+        </member>
+        <member name="P:genX.PopulationSummary.MeanObjective">
+            <summary>
+            The mean objective value of the population.
+            </summary>
+        </member>
+        <member name="P:genX.PopulationSummary.BestChromosome">
+            <summary>
+            Gets the <see cref="T:genX.Chromosome"/> in the population with the
+            highest objective value.
+            </summary>
+        </member>
+        <member name="P:genX.PopulationSummary.Variance">
+            <summary>
+            Gets the average squared deviation from the mean.
+            </summary>
+            <remarks>
+            "average squared deviation from the mean" means that Variance
+            represents a measure of how 'clumped up' a population is around
+            the average (mean) objective score.
+            </remarks>
+        </member>
+        <member name="P:genX.PopulationSummary.StandardDeviation">
+            <summary>
+            Gets the square root of the Variance.
+            </summary>
+        </member>
+        <member name="P:genX.PopulationSummary.Range">
+            <summary>
+            Gets the difference between the highest and lowest objectives.
+            </summary>
+        </member>
+        <member name="T:genX.Population">
+            <summary>
+            Represents a single Population of Chromosomes.
+            </summary>
+        </member>
+        <member name="M:genX.Population.#ctor(genX.GA,System.Int32)">
+            <summary>
+            Creates a new Population of Chromosomes.
+            </summary>        
+            <param name="ga">The GA.</param>
+            <param name="populationSize">The size of the population.</param>
+        </member>
+        <member name="P:genX.Population.Chromosomes">
+            <summary>
+            Gets the <see cref="T:genX.Chromosome"/> objects in the Population.
+            </summary>
+        </member>
+        <member name="P:genX.Population.PopulationSize">
+            <summary>
+            Gets or sets the size of the population.
+            </summary>
+        </member>
+        <member name="P:genX.Population.Summary">
+            <summary>
+            Gets a PopulationSummary for this Population.
+            </summary>
+        </member>
+        <member name="T:genX.Recombination.SinglePointCrossover">
+            <summary>
+            Implements single point crossover.
+            </summary>
+        </member>
+        <member name="M:genX.Recombination.SinglePointCrossover.Recombine(genX.Chromosome,genX.Chromosome)">
+            <summary>
+            Recombines two Chromosomes according to single point crossover.
+            </summary>
+            <param name="parent1">The first parent chromosome.</param>
+            <param name="parent2">The second parent chromosome.</param>
+            <returns>
+            An array of length two containing the offspring from the 
+            recombination operation.
+            </returns>
+            <remarks>
+            Single-point crossover generates offspring that have the first half of 
+            their genes inherited from one parent and the second half inherited
+            from the other parent.  The point at which the switch from one parent's
+            genes to another's is made is called the crossover point.
+            </remarks>
+        </member>
+        <member name="T:genX.Recombination.TwoPointCrossover">
+            <summary>
+            Implements two-point crossover.
+            </summary>
+        </member>
+        <member name="M:genX.Recombination.TwoPointCrossover.Recombine(genX.Chromosome,genX.Chromosome)">
+            <summary>
+            Recombines two Chromosomes according to 2 point crossover.
+            </summary>
+            <param name="parent1">The first parent chromosome.</param>
+            <param name="parent2">The second parent chromosome.</param>
+            <returns>
+            An array of length two containing the offspring from the 
+            recombination operation.
+            </returns>
+        </member>
+        <member name="T:genX.Recombination.PartiallyMatchedCrossover">
+            <summary>
+            Implements Partially Matched Crossover (PMX).
+            </summary>
+        </member>
+        <member name="M:genX.Recombination.PartiallyMatchedCrossover.Recombine(genX.Chromosome,genX.Chromosome)">
+            <summary>
+            Recombines two Chromosomes according to partially-matched 
+            recombination (PMX).
+            </summary>
+            <param name="parent1">The first parent chromosome.</param>
+            <param name="parent2">The second parent chromosome.</param>
+            <returns>
+            An array of length two containing the offspring from the 
+            recombination operation.
+            </returns>
+        </member>
+        <member name="T:genX.Recombination.UniformCrossover">
+            <summary>
+            Implements uniform crossover.
+            </summary>
+        </member>
+        <member name="M:genX.Recombination.UniformCrossover.Recombine(genX.Chromosome,genX.Chromosome)">
+            <summary>
+            Recombines two Chromosomes according to uniform crossover 
+            </summary>
+            <remarks>
+            Uniform crossover randomly chooses one gene from either of the
+            parents at each position in the offspring.
+            </remarks>
+            <param name="parent1">The first parent chromosome.</param>
+            <param name="parent2">The second parent chromosome.</param>
+            <returns>
+            An array of length two containing the offspring from the 
+            recombination operation.
+            </returns>
+        </member>
+        <member name="T:genX.Reordering.Inversion">
+            <summary>
+            Implements the inversion reordering operator.
+            </summary>
+        </member>
+        <member name="M:genX.Reordering.Inversion.Reorder(genX.Chromosome)">
+            <summary>
+            Reorders the genes in the chromosome.
+            </summary>
+            <param name="c">The chromosome to be reordered.</param>
+        </member>
+        <member name="T:genX.Reordering.Swap">
+            <summary>
+            Implements a swap reordering operator.
+            </summary>
+        </member>
+        <member name="M:genX.Reordering.Swap.Reorder(genX.Chromosome)">
+            <summary>
+            Reorders the genes in the chromosome.
+            </summary>
+            <param name="c">The chromosome to be reordered.</param>
+        </member>
+        <member name="T:genX.Scaling.ObjectiveComparer">
+            <summary>
+            Compares <see cref="T:genX.Chromosome"/> objects based on the value of
+            their Objective property.
+            </summary>
+            <remarks>
+            This comparer is used when sorting Chromosomes in a population.
+            </remarks>
+        </member>
+        <member name="T:genX.Scaling.ProportionalFitnessScaler">
+            <summary>
+            A Fitness scaler that implements proportional fitness scaling.
+            </summary>
+            <remarks>
+            Proportional fitness scaling simply assigns a fitness value that
+            is identical to each chromosome's NormalizedObjective.  Proportional
+            fitness scaling has been shown to lead to premature convergence,
+            and so is not often used.
+            </remarks>
+        </member>
+        <member name="M:genX.Scaling.ProportionalFitnessScaler.Scale(genX.Chromosome[])">
+            <summary>
+            Scales a collection of chromosome's objective values and puts
+            the result in the Fitness property.
+            </summary>
+            <param name="Chromosomes">
+            An array of chromosomes.
+            </param>
+        </member>
+        <member name="T:genX.Scaling.LinearFitnessScaler">
+            <summary>
+            Performs linear fitness scaling.
+            </summary>
+            <remarks>
+            Linear fitness scaling is a function that assigns a scaled fitness
+            value to each individual based on a linear relationship with the 
+            original fitness value.
+            <P>
+            The parameters of this relationship are
+            chosen in a manner to leave the fitness values of average individuals
+            unchanged, while increasing the best individual's fitness by a
+            multiple specified by FitnessMultiple.
+            </P>
+            </remarks>
+                f' = af + b
+            Proportional fitness scaling can be seen as linear scaling with
+            a=1 and b=0.
+            a and b are chosen such that:
+                1. The average scaled fitness is equal to the average raw fitness;
+                2. The maximum scaled fitness is C times the average scaled fitness,
+                    where C represents the desired number of copies of the best
+                    individual.
+            Each of these two conditions provides a point on the line represented
+            by f' = ax+b, so it is straightforward to get values for a and b.
+            
+            Because scaled fitness must be positive, we do have to check for cases
+            where some raw fitness values would be scaled negative.  If this occurs,
+            we adjust a and b such that the line crosses through the origin.
+            
+            a is the line's slope.  b is its y-intercept.
+        </member>
+        <member name="F:genX.Scaling.LinearFitnessScaler.DefaultFitnessMultiple">
+            <summary>
+            Specifies the default fitness multiple.
+            </summary>
+        </member>
+        <member name="M:genX.Scaling.LinearFitnessScaler.Scale(genX.Chromosome[])">
+            <summary>
+            Scales a collection of chromosome's objective values and puts
+            the result in the Fitness property.
+            </summary>
+            <param name="chromosomes">
+            An array of chromosomes.
+            </param>
+        </member>
+        <member name="M:genX.Scaling.LinearFitnessScaler.#ctor">
+            <summary>
+            Creates a new linear fitness scaler with the default fitness
+            multiple.
+            </summary>
+        </member>
+        <member name="M:genX.Scaling.LinearFitnessScaler.#ctor(System.Double)">
+            <summary>
+            Creates a new linear fitness scaler with the given fitness
+            multiple.
+            </summary>
+            <param name="fitnessMultiple">
+            The value for the FitnessMultiple property.
+            </param>
+        </member>
+        <member name="P:genX.Scaling.LinearFitnessScaler.FitnessMultiple">
+            <summary>
+            Specifies the fitness multiplier for the best individual in the
+            population.
+            </summary>
+            <remarks>
+            Values between 1.2 and 2.0 have been shown to perform well in
+            small (50-100) populations.
+            </remarks>
+        </member>
+        <member name="T:genX.Scaling.LinearRankedFitnessScaler">
+            <summary>
+            Performs linear ranked fitness scaling.
+            </summary>
+            <remarks>
+            <P>
+            Rank-based fitness scaling ignores the specific value of each 
+            Chromosome's Objective, using instead the rank of the Chromosome when
+            the population is sorted according to objective.
+            </P>
+            <P>
+            Rank-based fitness scaling avoids the premature convergence problems
+            of proportional fitness scaling in favor of a much more subtle bias
+            toward higher-performing individuals.
+            </P>
+            </remarks>
+        </member>
+        <member name="F:genX.Scaling.LinearRankedFitnessScaler.DefaultSelectivePressure">
+            <summary>
+            Specifies the default selective pressure.
+            </summary>
+        </member>
+        <member name="M:genX.Scaling.LinearRankedFitnessScaler.#ctor(System.Double)">
+            <summary>
+            Creates a new linear ranked fitness scaler with the given selective pressure.
+            </summary>
+        </member>
+        <member name="M:genX.Scaling.LinearRankedFitnessScaler.#ctor">
+            <summary>
+            Creates a new linear ranked fitness scaler with the default selective pressure.
+            </summary>
+        </member>
+        <member name="M:genX.Scaling.LinearRankedFitnessScaler.Scale(genX.Chromosome[])">
+            <summary>
+            Scales a collection of chromosome's objective values and puts
+            the result in the Fitness property.
+            </summary>
+            <param name="Chromosomes">
+            An array of chromosomes.
+            </param>
+        </member>
+        <member name="P:genX.Scaling.LinearRankedFitnessScaler.SelectivePressure">
+            <summary>
+            Gets or sets the selective pressure of this scaler.
+            </summary>
+            <remarks>
+            The selective pressure may be any value between 1.0 and 2.0.
+            </remarks>
+            <exception cref="T:System.Exception">
+            If the value is set to a value outside the range [1.0, 2.0].
+            </exception>
+        </member>
+        <member name="T:genX.Scaling.SigmaTruncation">
+            <summary>
+            Performs pre-scaling operations on a population.
+            </summary>
+        </member>
+        <member name="M:genX.Scaling.SigmaTruncation.Truncate(genX.Chromosome[])">
+            <summary>
+            Truncates the Fitness value 
+            </summary>
+            <param name="chromosomes"></param>
+        </member>
+        <member name="M:genX.Scaling.SigmaTruncation.#ctor">
+            <summary>
+            Initialize sigma truncation with a default constant.
+            </summary>
+        </member>
+        <member name="M:genX.Scaling.SigmaTruncation.#ctor(System.Double)">
+            <summary>
+            Initialize sigma truncation with a given constant.
+            </summary>
+        </member>
+        <member name="P:genX.Scaling.SigmaTruncation.C">
+            <summary>
+            Constant multiple.
+            </summary>
+            <remarks>
+            Should generally be between 1 and 3
+            </remarks>
+        </member>
+        <member name="T:genX.Scaling.PowerLawScaling">
+            <summary>
+            Performs power law scaling.
+            </summary>
+            <remarks>
+            Power law scaling simply sets the fitness of each individual to some
+            constant power of the objective.
+            </remarks>
+        </member>
+        <member name="M:genX.Scaling.PowerLawScaling.#ctor">
+            <summary>
+            Creates a new power law scaling object with default Power.
+            </summary>
+        </member>
+        <member name="M:genX.Scaling.PowerLawScaling.#ctor(System.Double)">
+            <summary>
+            Creates a new power law scaling object with the given Power.
+            </summary>
+            <param name="power">The value of the Power property.</param>
+        </member>
+        <member name="M:genX.Scaling.PowerLawScaling.Scale(genX.Chromosome[])">
+            <summary>
+            Scales a collection of chromosome's objective values and puts
+            the result in the Fitness property.
+            </summary>
+            <param name="chromosomes">
+            An array of chromosomes.
+            </param>
+        </member>
+        <member name="P:genX.Scaling.PowerLawScaling.Power">
+            <summary>
+            Gets or sets the power to which the objective will be raised to
+            obtain the fitness.
+            </summary>
+        </member>
+        <member name="T:genX.Selection.RouletteSelector">
+            <summary>
+            Performs selection with the roulette method.
+            </summary>
+        </member>
+        <member name="M:genX.Selection.RouletteSelector.Select(genX.Chromosome[],System.Int32)">
+            <summary>
+            Selects a single chromosome for reproduction based on roulette
+            selection.
+            </summary>
+            <param name="chromosomes">The array of candidate chromosomes.</param>
+            <param name="n">The number of chromosomes to select.</param>
+            <returns>
+            A Chromosome that should be used for reproduction.
+            </returns>
+        </member>
+        <member name="T:genX.Selection.TournamentSelector">
+            <summary>
+            Performs tournament selection.
+            </summary>
+            <remarks>
+            Tournament selection operators by choosing a random subpopulation
+            and selecting the best individual from this subpopulation to reproduce.
+            </remarks>
+        </member>
+        <member name="M:genX.Selection.TournamentSelector.Select(genX.Chromosome[])">
+            <summary>
+            Selects a single chromosome for reproduction based on tournament
+            selection.
+            </summary>
+            <param name="chromosomes">The array of candidate chromosomes.</param>
+            <returns>
+            A Chromosome that should be used for reproduction.
+            </returns>
+        </member>
+        <member name="P:genX.Selection.TournamentSelector.TourSize">
+            <summary>
+            Gets or sets the size of each tour.
+            </summary>
+            <remarks>
+            The TourSize property determines how many chromosomes will be
+            selected from the population for comparison in each tour.  The
+            output of each tour is the chromosome in the tour that had the
+            highest fitness.
+            </remarks>
+        </member>
+        <member name="T:genX.Selection.StochasticRemainderSelectionWithoutReplacement">
+            <summary>
+            Performs stochastic remainder selection without replacement.
+            </summary>
+            <remarks>
+            Each individual is selected deterministically according to the integer
+            portion of their expected selection count.  Thereafter, individuals are
+            chosen according to roulette selection based on the fractional part of
+            the expected selection count.
+            </remarks>
+        </member>
+        <member name="M:genX.Selection.StochasticRemainderSelectionWithoutReplacement.Select(genX.Chromosome[],System.Int32)">
+            <summary>
+            Selects a number of individuals for reproduction.
+            </summary>
+            <param name="chromosomes"></param>
+            <param name="nc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:genX.Termination.ObjectiveThresholdTerminator">
+            <summary>
+            Implements termination based on objective threshold.
+            </summary>
+        </member>
+        <member name="M:genX.Termination.ObjectiveThresholdTerminator.Terminate(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Terminates the algorithm if the threshold is met or exceeded.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:genX.Termination.ObjectiveThresholdTerminator.#ctor(System.Double)">
+            <summary>
+            Creates a new objective threshold terminator with the given threshold.
+            </summary>
+            <param name="threshold"></param>
+        </member>
+        <member name="P:genX.Termination.ObjectiveThresholdTerminator.Threshold">
+            <summary>
+            The threshold value for the terminator.
+            </summary>
+            <remarks>
+            If the GA is ObjectiveType.MinimizeObjective, the terminator will 
+            terminate if the BestObjective of the population goes to or below
+            this value.  
+            </remarks>
+        </member>
+        <member name="T:genX.Termination.EvolutionTimeTerminator">
+            <summary>
+            Implements a clock-time based termination function.
+            </summary>
+        </member>
+        <member name="M:genX.Termination.EvolutionTimeTerminator.Terminate(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Terminates the execution of the GA if the elapsed time
+            of execution exceeds the timespan.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:genX.Termination.EvolutionTimeTerminator.#ctor(System.TimeSpan)">
+            <summary>
+            Initializes a new evolution time terminator, using the given
+            time span as the time until termination.
+            </summary>
+            <param name="timeSpan"></param>
+        </member>
+    </members>
+</doc>

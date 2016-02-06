@@ -1,0 +1,124 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "genX", "genX\genX.csproj", "{89D84F44-FF15-4253-9CF4-96120551F104}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Build", "Build\Build.vcproj", "{B6B9EFE4-367D-472A-88CE-85094ADBB965}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegerMaximization", "Samples\IntegerMaximization\IntegerMaximization.csproj", "{44A652C4-C846-46D4-BC0C-73C5FFE6D03D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinearDiophantine", "Samples\LinearDiophantine\LinearDiophantine.csproj", "{0A916F1C-6F69-42BF-81DA-19977161CC5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleKnapsack", "Samples\SingleKnapsack\SingleKnapsack.csproj", "{E4445C80-0724-41F4-B4F7-D519BECCFE9E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{767EDD15-6F02-42F0-8044-46CC573DBB55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBinary", "Samples\SimpleBinary\SimpleBinary.csproj", "{924745E9-2C76-408A-8EF6-AEAB04AECC31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Help", "Help\Help.csproj", "{E63AC695-DEAA-4C23-AC10-1237B15E2922}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 9
+		SccProjectName0 = Perforce\u0020Project
+		SccLocalPath0 = ..\\..
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection0 = dev\\genX\\
+		SolutionUniqueID = {5AEB1F93-F5E1-4A83-B669-A93D72EAA660}
+		SccProjectUniqueName1 = Build\\Build.vcproj
+		SccLocalPath1 = ..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection1 = dev\\genX\\Build\\
+		SccProjectUniqueName2 = genX\\genX.csproj
+		SccLocalPath2 = ..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection2 = dev\\genX\\genX\\
+		SccProjectUniqueName3 = Help\\Help.csproj
+		SccLocalPath3 = ..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection3 = dev\\genX\\Help\\
+		SccProjectUniqueName4 = Samples\\IntegerMaximization\\IntegerMaximization.csproj
+		SccLocalPath4 = ..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection4 = dev\\genX\\Samples\\IntegerMaximization\\
+		SccProjectUniqueName5 = Samples\\LinearDiophantine\\LinearDiophantine.csproj
+		SccLocalPath5 = ..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection5 = dev\\genX\\Samples\\LinearDiophantine\\
+		SccProjectUniqueName6 = Samples\\SimpleBinary\\SimpleBinary.csproj
+		SccLocalPath6 = ..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection6 = dev\\genX\\Samples\\SimpleBinary\\
+		SccProjectUniqueName7 = Samples\\SingleKnapsack\\SingleKnapsack.csproj
+		SccLocalPath7 = ..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection7 = dev\\genX\\Samples\\SingleKnapsack\\
+		SccProjectUniqueName8 = Setup\\Setup.vdproj
+		SccLocalPath8 = ..\\..
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection8 = dev\\genX\\Setup\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{B6B9EFE4-367D-472A-88CE-85094ADBB965}.0 = {89D84F44-FF15-4253-9CF4-96120551F104}
+		{44A652C4-C846-46D4-BC0C-73C5FFE6D03D}.0 = {89D84F44-FF15-4253-9CF4-96120551F104}
+		{44A652C4-C846-46D4-BC0C-73C5FFE6D03D}.1 = {B6B9EFE4-367D-472A-88CE-85094ADBB965}
+		{0A916F1C-6F69-42BF-81DA-19977161CC5D}.0 = {89D84F44-FF15-4253-9CF4-96120551F104}
+		{0A916F1C-6F69-42BF-81DA-19977161CC5D}.1 = {B6B9EFE4-367D-472A-88CE-85094ADBB965}
+		{E4445C80-0724-41F4-B4F7-D519BECCFE9E}.0 = {89D84F44-FF15-4253-9CF4-96120551F104}
+		{E4445C80-0724-41F4-B4F7-D519BECCFE9E}.1 = {B6B9EFE4-367D-472A-88CE-85094ADBB965}
+		{767EDD15-6F02-42F0-8044-46CC573DBB55}.0 = {44A652C4-C846-46D4-BC0C-73C5FFE6D03D}
+		{767EDD15-6F02-42F0-8044-46CC573DBB55}.1 = {0A916F1C-6F69-42BF-81DA-19977161CC5D}
+		{767EDD15-6F02-42F0-8044-46CC573DBB55}.2 = {E4445C80-0724-41F4-B4F7-D519BECCFE9E}
+		{767EDD15-6F02-42F0-8044-46CC573DBB55}.3 = {89D84F44-FF15-4253-9CF4-96120551F104}
+		{767EDD15-6F02-42F0-8044-46CC573DBB55}.4 = {E4445C80-0724-41F4-B4F7-D519BECCFE9E}
+		{767EDD15-6F02-42F0-8044-46CC573DBB55}.5 = {0A916F1C-6F69-42BF-81DA-19977161CC5D}
+		{767EDD15-6F02-42F0-8044-46CC573DBB55}.6 = {44A652C4-C846-46D4-BC0C-73C5FFE6D03D}
+		{767EDD15-6F02-42F0-8044-46CC573DBB55}.7 = {89D84F44-FF15-4253-9CF4-96120551F104}
+		{924745E9-2C76-408A-8EF6-AEAB04AECC31}.0 = {B6B9EFE4-367D-472A-88CE-85094ADBB965}
+		{924745E9-2C76-408A-8EF6-AEAB04AECC31}.1 = {89D84F44-FF15-4253-9CF4-96120551F104}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{89D84F44-FF15-4253-9CF4-96120551F104}.Debug.ActiveCfg = Debug|.NET
+		{89D84F44-FF15-4253-9CF4-96120551F104}.Debug.Build.0 = Debug|.NET
+		{89D84F44-FF15-4253-9CF4-96120551F104}.Release.ActiveCfg = Release|.NET
+		{89D84F44-FF15-4253-9CF4-96120551F104}.Release.Build.0 = Release|.NET
+		{B6B9EFE4-367D-472A-88CE-85094ADBB965}.Debug.ActiveCfg = Debug|Win32
+		{B6B9EFE4-367D-472A-88CE-85094ADBB965}.Debug.Build.0 = Debug|Win32
+		{B6B9EFE4-367D-472A-88CE-85094ADBB965}.Release.ActiveCfg = Release|Win32
+		{B6B9EFE4-367D-472A-88CE-85094ADBB965}.Release.Build.0 = Release|Win32
+		{44A652C4-C846-46D4-BC0C-73C5FFE6D03D}.Debug.ActiveCfg = Debug|.NET
+		{44A652C4-C846-46D4-BC0C-73C5FFE6D03D}.Debug.Build.0 = Debug|.NET
+		{44A652C4-C846-46D4-BC0C-73C5FFE6D03D}.Release.ActiveCfg = Release|.NET
+		{44A652C4-C846-46D4-BC0C-73C5FFE6D03D}.Release.Build.0 = Release|.NET
+		{0A916F1C-6F69-42BF-81DA-19977161CC5D}.Debug.ActiveCfg = Debug|.NET
+		{0A916F1C-6F69-42BF-81DA-19977161CC5D}.Debug.Build.0 = Debug|.NET
+		{0A916F1C-6F69-42BF-81DA-19977161CC5D}.Release.ActiveCfg = Release|.NET
+		{0A916F1C-6F69-42BF-81DA-19977161CC5D}.Release.Build.0 = Release|.NET
+		{E4445C80-0724-41F4-B4F7-D519BECCFE9E}.Debug.ActiveCfg = Debug|.NET
+		{E4445C80-0724-41F4-B4F7-D519BECCFE9E}.Debug.Build.0 = Debug|.NET
+		{E4445C80-0724-41F4-B4F7-D519BECCFE9E}.Release.ActiveCfg = Release|.NET
+		{E4445C80-0724-41F4-B4F7-D519BECCFE9E}.Release.Build.0 = Release|.NET
+		{767EDD15-6F02-42F0-8044-46CC573DBB55}.Debug.ActiveCfg = Debug
+		{767EDD15-6F02-42F0-8044-46CC573DBB55}.Debug.Build.0 = Debug
+		{767EDD15-6F02-42F0-8044-46CC573DBB55}.Release.ActiveCfg = Release
+		{767EDD15-6F02-42F0-8044-46CC573DBB55}.Release.Build.0 = Release
+		{924745E9-2C76-408A-8EF6-AEAB04AECC31}.Debug.ActiveCfg = Debug|.NET
+		{924745E9-2C76-408A-8EF6-AEAB04AECC31}.Debug.Build.0 = Debug|.NET
+		{924745E9-2C76-408A-8EF6-AEAB04AECC31}.Release.ActiveCfg = Release|.NET
+		{924745E9-2C76-408A-8EF6-AEAB04AECC31}.Release.Build.0 = Release|.NET
+		{E63AC695-DEAA-4C23-AC10-1237B15E2922}.Debug.ActiveCfg = Debug|.NET
+		{E63AC695-DEAA-4C23-AC10-1237B15E2922}.Debug.Build.0 = Debug|.NET
+		{E63AC695-DEAA-4C23-AC10-1237B15E2922}.Release.ActiveCfg = Release|.NET
+		{E63AC695-DEAA-4C23-AC10-1237B15E2922}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+		Item:1 = Setup\readme.txt
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

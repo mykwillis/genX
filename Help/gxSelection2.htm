@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+    <HEAD>
+        <TITLE>Selection</TITLE>
+        <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+        <META NAME="GENERATOR" Content="Microsoft Visual Studio 7.0">
+        <xml>
+            <MSHelp:Keyword Index="K" Term="selection" />
+        </xml>
+        <link rel="stylesheet" href="dtue.css" type="text/css">
+    </HEAD>
+    <body topmargin="0" id="bodyID" class="dtBODY"> <!--NONSCROLLING BANNER START-->
+        <div id="nsbanner">
+            <div id="bannerrow1">
+                <TABLE CLASS="bannerparthead" CELLSPACING="0" ID="Table1">
+                    <TR ID="hdr">
+                        <TD CLASS="runninghead" nowrap>genX Developer's Guide</TD>
+                        <TD CLASS="product" nowrap>&nbsp;</TD>
+                    </TR>
+                </TABLE>
+            </div>
+            <div id="TitleRow">
+                <H1 class="dtH1"></A>Selection</H1>
+            </div>
+        </div>
+        <!--NONSCROLLING BANNER END-->
+        <DIV id="nstext" valign="bottom">
+            <P>Some terms that are thrown around in selection schemes:</P>
+            <P><STRONG>stochastic</STRONG> - probabilistic.&nbsp; In stochastic selection 
+                schemes, there is no guarantee made as to whether or not an individual will be 
+                allowed to reproduce, there are only probabilities assigned to that occurance.</P>
+            <P><STRONG>sampling with replacement</STRONG> - After selecting an individual from 
+                the population, that individual is put back in 'the pool' of candidates for the 
+                next selection.&nbsp; This means that the probability of an individual being 
+                selected is not affected by how many times it has already been chosen.&nbsp;
+            </P>
+            <P><STRONG>sampling without replacement</STRONG> - After selecting an individual 
+                from the population, that individual is not put back in the pool.&nbsp; 
+                Actually, it is put back in the pool, but its selection probability is reduced 
+                by 1.0.&nbsp; This makes sure that any individual will never have more than f/f<SUB>t</SUB>
+                + 1 instances in the next generation.</P>
+            <P>&nbsp;</P>
+            <P>Deterministic.&nbsp; This method selects individuals according to their expected 
+                selection count ( pselect * n ).&nbsp; Each individual is automatically 
+                selected at the number of times given by the integer portion of e.&nbsp; The 
+                population is then sorted according to the remainders, and the indiviuals with 
+                the highest remainders are selected until the desired number has been chosen.</P>
+            <P>Remainder Stochastic Sampling Without Replacement.</P>
+            <P>Stochastic Sampling with Replacement.&nbsp; This is Roulette Selection.</P>
+            <DIV CLASS="footer">
+                <br>
+                <HR>
+                <p>Copyright © 2002 <A href="http://www.wanderlust-software.com">Wanderlust Software</A>.&nbsp; All 
+                    Rights Reserved.
+                </p>
+            </DIV>
+        </DIV>
+    </body>
+</HTML>

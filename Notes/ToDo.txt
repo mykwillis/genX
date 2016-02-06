@@ -1,0 +1,16 @@
+TO DO
+-----
+When supplying an array of GeneDescriptors, should make 
+  - EncodingType.Custom
+  - ChromosomeLength = gd.Length
+automatically.
+
+
+Automatic Encoding
+ - Translates a type into an array of GeneDescriptors
+ 
+Gene Labeling
+
+Binary Encodings
+
+

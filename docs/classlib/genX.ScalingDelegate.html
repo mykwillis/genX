@@ -1,0 +1,16 @@
+﻿<html dir="LTR"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"><title>ScalingDelegate Delegate</title><xml></xml><link rel="stylesheet" type="text/css" href="MSDN.css"><script language="javascript" type="text/javascript" src="scroll.js"></script></head><body id="bodyID" class="dtBODY"><div id="nsbanner"><div id="bannerrow1"><table class="bannerparthead" cellspacing="0"><tr id="hdr"><td class="runninghead">genX Genetic Algorithm Library</td><td class="product"></td></tr></table></div><div id="TitleRow"><h1 class="dtH1">ScalingDelegate Delegate</h1></div></div><div id="nstext"><p>
+            Defines the fitness scaling function.
+            </p><div class="syntax"><div>public delegate void ScalingDelegate(<br>   <a href="genX.Chromosome.html">Chromosome[]</a> <i>chromosomes</i><br>);</div></div><h4 class="dtH4">Parameters</h4><dl><dt><i>chromosomes</i></dt><dd>An array of Chromosomes for which the Fitness
+            property is to be calculated.  The passed-in array is sorted according
+            to ascending Objective values.  The NormalizedObjective property of each Chromosome
+            is normalized and offset from the value returned by the objective function
+            such that it may be assumed to be non-negative.
+            </dd></dl><h4 class="dtH4">Remarks</h4><p><P>
+            Fitness scaling functions are responsible for setting the Fitness
+            property of each chromosome in the population.  Typically this is done
+            as some function of the Chromosome's RawObjective value, though the
+            fitness scaling function is free to assign a value as it sees fit.
+            </P><P>
+            Fitness values may be any non-negative value, and represent the
+            relative liklihood of a chromosome being selected for reproduction.
+            </P></p><h4 class="dtH4">Requirements</h4><p><b>Namespace: </b><a href="genX.html">genX Namespace</a></p><p><b>Assembly: </b>genX.dll</p><h4 class="dtH4">See Also</h4><p><a href="genX.html">genX Namespace</a></p><hr><div id="footer"><p><a href="http://www.wanderlust-software.com">Copyright (c) 2002-2003 Wanderlust Software, LLC.  All Rights Reserved.</a></p><p>Generated from assembly genX [1.0.1157.32853]</p></div></div></body></html>

@@ -1,0 +1,57 @@
+July 21, 2002
+--------------------------------------------------------------------------
+Haploid vs. Diploid - the conventional wisdom is that having multiple 
+copies of the genome is useful in dynamic environments, but that it has
+a negligable effect for static problem solving.
+
+
+July 20, 2002
+--------------------------------------------------------------------------
+Updated web site with version 0.9.2 based on changelist @17.
+
+Created depot genx1.0, and branches genx_to_genx1.0 and genx1.0_to_genx.
+
+Updated Build project to automate the creation of NDoc and HTML Help 
+Workshop help files.  Everything should be completely automated now.
+
+genX1.0 is simplified, and should stay that way.  Gene labeling, reordering,
+and so forth should be put in the main branch and shipped as version 2.0.
+
+- Need to create a redistributable merge module so that developers can
+  redistribute the genX assembly with their applications.
+  
+- Need to turn on licensing.
+
+
+July 14, 2002
+--------------------------------------------------------------------------
+
+How does an organism decide which allele to express, if more than one is
+present?  Turns out Mendel was lucky in that the traits he studied with
+pea plants have one dominant and one recessive allele.  But in real life,
+incomplete dominance and codominance (not the same thing), exist.
+
+incomplete dominance: black mouse + white mouse = gray mouse. (blended traits)
+codomincance: black mouse + white mouse = spotted mouse. (both traits expressed, but not blended.)
+
+AB blood type is an example of codominance.
+
+So to translate this to artificial genetic algorithms, we should allow for
+some type of 'blending' of alleles when both are present in an individual.
+Just like other operators, we can probably blend differently depending on
+the gene itself.
+
+I think people often over-simplify the process by which genes contribute to
+morphology.  Environment, both at the cellular level and organism level, probably
+play a much larger role in how a trait is expressed than people normally think.
+
+Again, the metaphore: genes set the stage, they set up the pieces of the pinball
+machine, etc.  The environment has a big effect on the initial trajectory of an
+object through this genetic maze, and can influence it on the way.
+
+Maybe a way to visualize this is that the genes define the placement of walls
+in a hyper-maze in very many dimensions.  Consider each trait of an individual
+to be represented by one dimension.  Then the genes define...
+
+Polygenic traits, those that depend on multiple genes, are obviously very common.
+Alleles can be additive or not.

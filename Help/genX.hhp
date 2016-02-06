@@ -1,0 +1,37 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=genX.chm
+Contents file=TOC.hhc
+Default topic=gxGettingStarted.htm
+Display compile progress=No
+Language=0x409 English (United States)
+Title=genX Genetic Algorithm Library
+
+
+[FILES]
+gxWritingAnObjectiveFunction.htm
+gxAckleysFunctionExample.htm
+gxAddingComponent.htm
+gxClassLibraryReference.htm
+gxExamples.htm
+gxgenXOverview.htm
+gxGettingStarted.htm
+gxIntegerMaximizationExample.htm
+gxLicensing.htm
+gxLinearDiophantineExample.htm
+gxMutation.htm
+gxOverviewOfGeneticAlgorithms.htm
+gxRecombination.htm
+gxReference.htm
+gxRepresentation.htm
+gxResources.htm
+gxSelection.htm
+gxSettingProperties.htm
+gxSimpleBinaryExample.htm
+gxSingleKnapsackExample.htm
+gxSupportedGeneticOperators.htm
+gxUnderstandingGeneticAlgorithms.htm
+gxWalkthrough.htm
+
+[INFOTYPES]
+

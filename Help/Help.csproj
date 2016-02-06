@@ -1,0 +1,162 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.0.9466"
+        SchemaVersion = "1.0"
+        ProjectGuid = "{E63AC695-DEAA-4C23-AC10-1237B15E2922}"
+        SccProjectName = "Perforce Project"
+        SccLocalPath = "..\..\.."
+        SccProvider = "MSSCCI:Perforce SCM"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "Help"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                RootNamespace = "Help"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References/>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "gxAddingComponent.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxClassLibraryReference.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxExamples.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxgenXOverview.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxGettingStarted.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxIntegerMaximizationExample.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxLicensing.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxLinearDiophantineExample.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxMutation.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxOverviewOfGeneticAlgorithms.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxRecombination.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxReference.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxRepresentation.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxResources.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxSelection.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxSettingProperties.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxSimpleBinaryExample.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxSingleKnapsackExample.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxSupportedGeneticOperators.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxTroubleshooting.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxUnderstandingGeneticAlgorithms.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxWalkthrough.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "gxWritingAnObjectiveFunction.htm"
+                    BuildAction = "Content"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

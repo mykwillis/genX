@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<HTML>
+    <HEAD>
+        <TITLE>Representing Problems</TITLE>
+        <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+        <META content="Microsoft Visual Studio 7.0" name="GENERATOR">
+        <xml>
+            <MSHelp:Keyword Index="K" Term="representation, chromosome" />
+            <MSHelp:Keyword Index="K" Term="chromosome representation" />
+        </xml><LINK href="dtue.css" type="text/css" rel="stylesheet"></HEAD>
+    <body class="dtBODY" id="bodyID" topMargin="0"> <!--NONSCROLLING BANNER START-->
+        <div id="nsbanner">
+            <div id="bannerrow1">
+                <TABLE class="bannerparthead" id="Table1" cellSpacing="0">
+                    <TR id="hdr">
+                        <TD class="runninghead" noWrap>genX Developer's Guide</TD>
+                        <TD class="product" noWrap>&nbsp;</TD>
+                    </TR>
+                </TABLE>
+            </div>
+            <div id="TitleRow">
+                <H1 class="dtH1"></A>Representing Problems</H1>
+            </div>
+        </div>
+        <!--NONSCROLLING BANNER END-->
+        <DIV id="nstext" valign="bottom">
+            <P>In order for a genetic algorithm to work on a problem, it's necessary to encode 
+                potential solutions to the problem&nbsp;as a genotype.&nbsp; A genotype 
+                describes the number of genes in an individual, each gene's type, and 
+                constraints for each gene's allele values.&nbsp; In a genotype, each gene 
+                usually represents a variable or parameter to&nbsp;be used in evaluating an 
+                individual's fitness.</P>
+            <P>Consider a problem in which&nbsp;a function f of&nbsp;5 variables is&nbsp;to 
+                be&nbsp;maximized.&nbsp; The easiest way to represent this as a genotype to be 
+                operated on by the genetic algorithm is as a single chromosome with&nbsp;5 
+                genes, each gene having real-valued alleles.&nbsp;&nbsp;
+            </P>
+            <P>Other encodings may be similiarly simple.&nbsp; A knapsack problem, in which the 
+                objective is to select items from a set so as to maximize their collective 
+                value while keeping their cost below some threshold, may be represented as a 
+                chromosome containing one binary gene for each item in the set.&nbsp; In a 
+                knapsack problem with 4 items, an individual with allele value 0110 would 
+                encode a candidate solution of "select only the second and third items."</P>
+            <P>In genX,&nbsp;simple homogeneous genotype encodings (those in which each gene 
+                has the same type and allowed values) can be described simply by setting the <STRONG>
+                    EncodingType</STRONG> and <STRONG>ChromosomeLength</STRONG> properties of 
+                the GA component at design time.&nbsp; genX also supports heterogeneous 
+                genotype encodings in which each gene has a potentially different base 
+                type.&nbsp; Describing heterogeneous encodings requires a small bit of 
+                programming; see the <STRONG>Gene</STRONG> class for a description of 
+                this process.</P>
+            <P>The samples in the genX package demonstrate a variety of problems and their 
+                respective encodings as genotypes.</P>
+            <DIV class="footer"><br>
+                <HR>
+                <p>Copyright © 2002 <A href="http://www.wanderlust-software.com">Wanderlust Software</A>.&nbsp; All 
+                    Rights Reserved.
+                </p>
+            </DIV>
+        </DIV>
+    </body>
+</HTML>
